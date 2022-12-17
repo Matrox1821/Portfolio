@@ -1,0 +1,156 @@
+@import "vars";
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Raleway:wght@400;500;700&display=swap");
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $background-dark;
+  text-align: center;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+    color: $color-light--50;
+  }
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+main {
+  margin: 2rem;
+}
+//Layout
+.navbar {
+  width: 100vw;
+  height: 80px;
+  &__list {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    .list__logo,
+    .list__option {
+      font-size: 14px;
+    }
+    .list__logo .active {
+      font-size: 32px;
+      color: $color-light--100;
+      text-shadow: $shadow-light--15;
+    }
+    .active {
+      font-size: 20px;
+      color: $color-light--100;
+      text-shadow: $shadow-light--15;
+    }
+  }
+}
+
+//Home
+p {
+  color: $color-light--100;
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  letter-spacing: 8px;
+  .title-name {
+    font-weight: 400;
+    font-size: 48px;
+    color: $color-light--100;
+    text-shadow: $shadow-light--35;
+  }
+  .me-image {
+    margin: 6vh 0;
+    display: inline-flex;
+    align-items: center;
+    .japanese-words {
+      writing-mode: vertical-rl;
+      font-size: 18px;
+      color: $color-light--100;
+      text-shadow: $shadow-light--5;
+      font-family: "Kiwi Maru", serif;
+      letter-spacing: 0;
+    }
+    .image {
+      width: 225;
+      height: 233px;
+      border: 1px solid $color-light--100;
+      box-shadow: $shadow-light--10;
+    }
+  }
+  h2 {
+    margin: 5vh 0 0;
+    color: $color-light--100;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 8px;
+  }
+  h3 {
+    margin: 0;
+    color: $color-light--100;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 4px;
+  }
+  .down-arrow {
+    margin: 4vh 0 6vh;
+    height: 20px;
+    width: 40px;
+    text-shadow: $shadow-light--10;
+    span {
+      display: inline-flex;
+      background: $color-light--100;
+      width: 20px;
+      height: 4px;
+      position: relative;
+      box-shadow: $shadow-light--10;
+    }
+    .line1 {
+      transform: rotate(45deg) translate(0px, -6px);
+    }
+    .line2 {
+      transform: rotate(-45deg) translate(0px, -6px);
+    }
+  }
+}
+
+//About Me
+.container-am {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .am-title {
+    font-size: 32px;
+    color: $color-light--100;
+    text-shadow: $shadow-light--15;
+  }
+  .am-text {
+    font-size: 24px;
+  }
+  .tecnologies-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .technologies-text {
+      font-size: 20px;
+      color: $color-light--100;
+    }
+    .technologies-list {
+      font-size: 15px;
+      color: $color-light--100;
+      list-style: inside square;
+      columns: 2;
+    }
+  }
+}
