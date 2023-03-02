@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Resume = () => {
-  return <p>Resume</p>;
+  return <section id="resume">Resume</section>;
 };

@@ -1,26 +1,28 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
+import { Link } from "react-scroll";
 const sections = [
-  { name: "GM", href: "/", type: "logo" },
-  { name: "Sobre Mí", href: "/sobre-mi" },
-  { name: "Proyectos", href: "/proyectos" },
-  { name: "Portafolio", href: "/portafolio" },
-  { name: "Contacto", href: "/contacto" },
+  { name: "GM", href: "home", type: "logo" },
+  { name: "Sobre Mí", href: "about-me" },
+  { name: "Proyectos", href: "proyects" },
+  { name: "Portafolio", href: "resume" },
+  { name: "Contacto", href: "contact" },
 ];
-
 const NavItems = () => {
   const sectionsMap = sections.map((section, i) => {
     const { name, href, type } = section;
     const liClassByType = type === "logo" ? "list__logo" : "list__option";
     return (
-      <li key={i} className={liClassByType}>
-        <NavLink
+      <li key={i}>
+        <Link
+          activeClass="active"
           to={href}
-          className={({ isActive }) => (isActive ? "active" : "")}
+          spy={true}
+          smooth={true}
+          duration={500}
+          className={liClassByType}
         >
           {name}
-        </NavLink>
+        </Link>
       </li>
     );
   });

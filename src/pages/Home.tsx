@@ -1,23 +1,98 @@
-import React from "react";
-import Matias from "../assets/GalarzaMatias.jpg";
+import React, { useState } from "react";
+import { Link } from "react-scroll";
+import { IoChevronDownSharp } from "react-icons/io5";
+import Asta_edit from "../assets/Asta-edit.jpg";
+import Asta from "../assets/Asta.jpg";
 
 export const Home = () => {
+  const [isActive, setIsActive] = useState("");
+  const changeClassName = () => {
+    isActive === "" ? setIsActive(" active-change") : setIsActive("");
+  };
   return (
-    <div className="home-container">
+    <section id="home">
       <h1 className="title-name">Galarza Matías</h1>
       <div className="container-image">
         <p className="japanese-words">ガラルザマティアス</p>
-        <img src={Matias} className="image" alt="Galarza Matias con lentes" />
+        <div className={`line-image${isActive}`} onClick={changeClassName}>
+          <span className="line" />
+          <img src={Asta} className="image" alt="Galarza Matias con lentes" />
+          <img
+            src={Asta_edit}
+            className="image-back"
+            alt="Galarza Matias con lentes"
+          />
+        </div>
         <p className="japanese-words">ウェブ開発者</p>
       </div>
       <div className="subtitle">
+        <svg
+          className="line-home first-line"
+          width="377"
+          height="121"
+          viewBox="0 0 377 121"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M378.129 3L-1.18779 118.618"
+            stroke="#2449CD"
+            stroke-width="2"
+          />
+        </svg>
+        <svg
+          className="line-home second-line"
+          width="377"
+          height="159"
+          viewBox="0 0 377 159"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M-1.00964 2.64386L378.71 156.144"
+            stroke="#2449CD"
+            stroke-width="2"
+          />
+        </svg>
         <h2>Portafolio</h2>
         <h3>Desarrollador Web</h3>
-        <div className="down-arrow">
-          <span className="line1"></span>
-          <span className="line2"></span>
-        </div>
       </div>
-    </div>
+      <Link
+        activeClass="active"
+        to="about-me"
+        spy={true}
+        smooth={true}
+        duration={500}
+        className="link-arrow"
+      >
+        <IoChevronDownSharp className="down-arrow" />
+      </Link>
+      <div className="home-lines">
+        <svg
+          className="home-lines first-line"
+          width="375"
+          height="123"
+          viewBox="0 0 375 123"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M-2.12485 72.7582L72.8749 3.25813L153.375 120.258L375.875 59.7582"
+            stroke="#2449CD"
+            stroke-width="2"
+          />
+        </svg>
+        <svg
+          className="home-lines second-line"
+          width="373"
+          height="109"
+          viewBox="0 0 373 109"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M-1 106.5L374 2.5" stroke="#fbfbfb" stroke-width="2" />
+        </svg>
+      </div>
+    </section>
   );
 };

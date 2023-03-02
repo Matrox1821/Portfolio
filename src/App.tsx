@@ -1,20 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/layout";
-import { routes } from "./routes/routes";
+import { AboutMe } from "./pages/AboutMe";
+import { Contact } from "./pages/Contact";
+import { Home } from "./pages/Home";
+import { Proyects } from "./pages/Proyects";
+import { Resume } from "./pages/Resume";
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          {routes.map((route, i) => {
-            return (
-              <Route key={i} path={route.path} element={<route.component />} />
-            );
-          })}
-        </Routes>
-      </Layout>
-    </Router>
+    <Layout>
+      <Home />
+      <AboutMe />
+      <Proyects />
+      <Resume />
+      <Contact />
+    </Layout>
   );
 }
 
