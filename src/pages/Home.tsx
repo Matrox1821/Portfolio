@@ -1,19 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 import { IoChevronDownSharp } from "react-icons/io5";
 import Asta_edit from "../assets/Asta-edit.jpg";
 import Asta from "../assets/Asta.jpg";
 export const Home = () => {
-  const [isActive, setIsActive] = useState("");
-  const changeClassName = () => {
-    isActive === "" ? setIsActive(" active-change") : setIsActive("");
-  };
   return (
     <section id="home">
       <h1 className="title-name">Galarza Matías</h1>
       <div className="container-image">
         <p className="japanese-words">ガラルザマティアス</p>
-        <div className={`line-image${isActive}`} onClick={changeClassName}>
+        <div className="line-image">
           <span className="line" />
           <img src={Asta} className="image" alt="Galarza Matias con lentes" />
           <img
