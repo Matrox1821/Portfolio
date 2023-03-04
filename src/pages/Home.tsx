@@ -3,7 +3,6 @@ import { Link } from "react-scroll";
 import { IoChevronDownSharp } from "react-icons/io5";
 import Asta_edit from "../assets/Asta-edit.jpg";
 import Asta from "../assets/Asta.jpg";
-
 export const Home = () => {
   const [isActive, setIsActive] = useState("");
   const changeClassName = () => {
@@ -28,22 +27,18 @@ export const Home = () => {
       <div className="subtitle">
         <svg
           className="line-home first-line"
-          width="377"
-          height="121"
           viewBox="0 0 377 121"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M378.129 3L-1.18779 118.618"
+            d="M378.129 2L-1.18778 117.618"
             stroke="#2449CD"
             stroke-width="2"
           />
         </svg>
         <svg
           className="line-home second-line"
-          width="377"
-          height="159"
           viewBox="0 0 377 159"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -70,8 +65,6 @@ export const Home = () => {
       <div className="home-lines">
         <svg
           className="home-lines first-line"
-          width="375"
-          height="123"
           viewBox="0 0 375 123"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -84,13 +77,18 @@ export const Home = () => {
         </svg>
         <svg
           className="home-lines second-line"
-          width="373"
-          height="109"
-          viewBox="0 0 373 109"
+          viewBox="0 0 373 108"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M-1 106.5L374 2.5" stroke="#fbfbfb" stroke-width="2" />
+          <line
+            x1="-0.534492"
+            y1="106.073"
+            x2="374.465"
+            y2="2.07274"
+            stroke="#FBFBFB"
+            stroke-width="2"
+          />
         </svg>
       </div>
     </section>

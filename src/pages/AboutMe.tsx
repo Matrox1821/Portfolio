@@ -8,7 +8,6 @@ import {
   SiPython,
 } from "react-icons/si";
 import asta_edit from "../assets/Asta-edit.jpg";
-
 export const AboutMe = () => {
   return (
     <section id="about-me">
@@ -16,8 +15,6 @@ export const AboutMe = () => {
         <div className="am-lines">
           <svg
             className="am-lines first-line"
-            width="382"
-            height="352"
             viewBox="0 0 382 352"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -30,13 +27,11 @@ export const AboutMe = () => {
           </svg>
           <svg
             className="am-lines second-line"
-            width="398"
-            height="324"
             viewBox="0 0 398 324"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M-2 323L400 1" stroke="#fbfbfb" stroke-width="2" />
+            <path d="M-2 323L400 1" stroke="white" stroke-width="2" />
           </svg>
         </div>
         <img src={asta_edit} className="am-image" alt="imagen de repuesto" />
@@ -50,7 +45,7 @@ export const AboutMe = () => {
       <div className="tech-container">
         <div className="tech-text-container">
           <h2 className="tech-title">{`<Tecnologías/>`}</h2>
-          <p>&nbsp;&nbsp;Tecnologías con las que he trabajado recientemente:</p>
+          <p>Tecnologías con las que he trabajado recientemente:</p>
         </div>
         <ul className="tech-list">
           <li className="tech">
