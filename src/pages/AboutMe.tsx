@@ -5,7 +5,7 @@ import {
   SiReact,
   SiNodedotjs,
   SiMongodb,
-  SiPython,
+  SiSass,
 } from "react-icons/si";
 import asta_edit from "../assets/Asta-edit.jpg";
 export const AboutMe = () => {
@@ -69,8 +69,8 @@ export const AboutMe = () => {
             <h3>MongoDB</h3>
           </li>
           <li className="tech">
-            <SiPython className="tech-icon" />
-            <h3>Python</h3>
+            <SiSass className="tech-icon" />
+            <h3>Sass</h3>
           </li>
         </ul>
       </div>

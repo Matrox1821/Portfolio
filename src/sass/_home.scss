@@ -1,0 +1,182 @@
+@media (320px <= width <= 480px) {
+  #home {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 8rem);
+    letter-spacing: 0.5rem;
+    justify-content: space-between;
+    padding-bottom: 11rem;
+    .title-name {
+      margin: 1rem 0;
+      font-weight: 400;
+      font-size: 2.5rem;
+      color: $color-light;
+      text-shadow: $shadow-secondary--35;
+    }
+    .container-image {
+      margin: 2rem;
+      display: inline-flex;
+      align-items: center;
+      .japanese-words {
+        writing-mode: vertical-rl;
+        font-size: 1rem;
+        color: $color-light;
+        text-shadow: $shadow-secondary--5;
+        font-family: "Kiwi Maru", serif;
+        letter-spacing: 0;
+      }
+      .line-image {
+        display: flex;
+        align-items: flex-end;
+        transition: 0.5s ease-in-out;
+        flex-direction: row;
+        width: 10rem;
+        height: 10rem;
+      }
+      .line {
+        z-index: 2;
+        position: relative;
+        height: 0px;
+        width: 2px;
+        left: 0;
+        background-color: $secondary;
+        box-shadow: 0px 5px 10px $secondary;
+        animation: line-move 2.5s linear infinite;
+        animation-direction: alternate;
+      }
+      @keyframes line-move {
+        0%,
+        10% {
+          left: 0rem;
+          height: 0rem;
+        }
+        33% {
+          left: 0rem;
+          height: 10rem;
+        }
+        66% {
+          left: 10rem;
+          height: 10rem;
+        }
+        90%,
+        100% {
+          left: 10rem;
+          height: 0rem;
+        }
+      }
+      .image {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        clip-path: inset(0 0 0 0);
+        animation: change-image 2.5s linear infinite;
+        animation-direction: alternate;
+      }
+      @keyframes change-image {
+        0%,
+        10% {
+          clip-path: inset(0 0 0 0);
+        }
+        33% {
+          clip-path: inset(0 0 0 0);
+        }
+        66% {
+          clip-path: inset(0 0 0 10rem);
+        }
+        90%,
+        100% {
+          clip-path: inset(0 0 0 10rem);
+        }
+      }
+      .image-back {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        clip-path: inset(0 0 0 0);
+        transition: clip-path 0.5s;
+        z-index: -1;
+      }
+    }
+
+    .subtitle {
+      & .line-home {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        width: 100vw;
+        filter: drop-shadow($shadow-secondary--5);
+        &.first-line {
+          transform: translateY(-3.4rem);
+        }
+        &.second-line {
+          transform: translateY(-1.7rem);
+        }
+      }
+
+      h2 {
+        margin: 0;
+        color: $color-light;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 0.5rem;
+      }
+      h3 {
+        margin: 0;
+        color: $color-light;
+        font-size: 1.125rem;
+        font-weight: 500;
+        letter-spacing: 0.25rem;
+      }
+    }
+    .link-arrow {
+      position: relative;
+      top: 0;
+      margin: 1.75rem 0;
+      height: 30px;
+      width: 30px;
+      padding: 0.5rem;
+      cursor: pointer;
+      border: 1px solid $secondary;
+      border-radius: 100px;
+      filter: drop-shadow($shadow-secondary--5);
+      animation: arrow-animation 3s linear infinite;
+      .down-arrow {
+        height: 30px;
+        width: 30px;
+        color: $secondary;
+      }
+    }
+    @keyframes arrow-animation {
+      0%,
+      55%,
+      90%,
+      100% {
+        top: 0;
+      }
+      60%,
+      80% {
+        top: 0.75rem;
+      }
+      70% {
+        top: 0.25rem;
+      }
+    }
+    .home-lines {
+      left: 0;
+      z-index: -1;
+      position: absolute;
+      top: 43vh;
+      width: 100vw;
+      &.first-line {
+        transform: translateY(6rem);
+        filter: drop-shadow($shadow-secondary--5);
+      }
+      &.second-line {
+        transform: translateY(7.5rem);
+        filter: drop-shadow($shadow-light--5);
+      }
+    }
+  }
+}
