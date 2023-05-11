@@ -180,11 +180,12 @@ body {
         }
       }
       .tech-list {
-        font-size: 15px;
-        list-style: none;
+        width: 100%;
+        gap: 2rem;
         display: grid;
-        grid-gap: 2rem 2rem;
+        font-size: 15px;
         grid-template-columns: auto auto;
+        list-style: none;
         .tech {
           display: flex;
           flex-direction: column;
