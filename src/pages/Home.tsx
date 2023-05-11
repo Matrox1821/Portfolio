@@ -9,7 +9,7 @@ export const Home = () => {
     <section id="home">
       <h1 className="title-name">Galarza Matías</h1>
       <div className="container-image">
-        <p className="japanese-words">ガラルザマティアス</p>
+        <p className="japanese-words">ガラルザ マティアス</p>
         <div className="line-image">
           <span className="line" />
           <img src={Asta} className="image" alt="Galarza Matias con lentes" />
