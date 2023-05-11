@@ -1,8 +1,7 @@
-import React, { Fragment } from "react";
-import { ILayout } from "../../interfaces/InterfacesLayout";
-import { NavBar } from "./NavBar";
-
-export const Layout = ({ children }: ILayout) => {
+import React, {Fragment} from "react";
+import {NavBar} from "./NavBar";
+import {ILayout} from "../../types/Interfaces";
+export const Layout = ({children}: ILayout) => {
   return (
     <Fragment>
       <NavBar />

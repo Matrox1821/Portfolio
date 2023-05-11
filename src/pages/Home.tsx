@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-scroll";
-import { IoChevronDownSharp } from "react-icons/io5";
+import {Link} from "react-scroll";
+import {IoChevronDownSharp} from "react-icons/io5";
 import Asta_edit from "../assets/Asta-edit.jpg";
 import Asta from "../assets/Asta.jpg";
+
 export const Home = () => {
   return (
     <section id="home">
@@ -25,8 +26,7 @@ export const Home = () => {
           className="line-home first-line"
           viewBox="0 0 377 121"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+          xmlns="http://www.w3.org/2000/svg">
           <path
             d="M378.129 2L-1.18778 117.618"
             stroke="#2449CD"
@@ -37,8 +37,7 @@ export const Home = () => {
           className="line-home second-line"
           viewBox="0 0 377 159"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+          xmlns="http://www.w3.org/2000/svg">
           <path
             d="M-1.00964 2.64386L378.71 156.144"
             stroke="#2449CD"
@@ -54,8 +53,7 @@ export const Home = () => {
         spy={true}
         smooth={true}
         duration={500}
-        className="link-arrow"
-      >
+        className="link-arrow">
         <IoChevronDownSharp className="down-arrow" />
       </Link>
       <div className="home-lines">
@@ -63,8 +61,7 @@ export const Home = () => {
           className="home-lines first-line"
           viewBox="0 0 375 123"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+          xmlns="http://www.w3.org/2000/svg">
           <path
             d="M-2.12485 72.7582L72.8749 3.25813L153.375 120.258L375.875 59.7582"
             stroke="#2449CD"
@@ -75,8 +72,7 @@ export const Home = () => {
           className="home-lines second-line"
           viewBox="0 0 373 108"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+          xmlns="http://www.w3.org/2000/svg">
           <line
             x1="-0.534492"
             y1="106.073"
