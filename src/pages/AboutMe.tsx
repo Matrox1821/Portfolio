@@ -1,4 +1,14 @@
 import React from "react";
+import {BiShapeCircle} from "react-icons/bi";
+import {
+  IoBookSharp,
+  IoPeopleSharp,
+  IoExtensionPuzzleSharp,
+  IoBulbSharp,
+  IoChatboxEllipsesSharp,
+  IoPersonSharp,
+  IoHardwareChipSharp,
+} from "react-icons/io5";
 import {
   SiTypescript,
   SiJavascript,
@@ -8,6 +18,61 @@ import {
   SiSass,
 } from "react-icons/si";
 import asta_edit from "../assets/Asta-edit.jpg";
+
+const HARD_SKILLS = [
+  {
+    ReactIcon: SiTypescript,
+    label: "Typescript",
+  },
+  {
+    ReactIcon: SiJavascript,
+    label: "JavaScript (ES6+)",
+  },
+  {
+    ReactIcon: SiReact,
+    label: "React",
+  },
+  {
+    ReactIcon: SiNodedotjs,
+    label: "NodeJS",
+  },
+  {
+    ReactIcon: SiMongodb,
+    label: "MongoDB",
+  },
+  {
+    ReactIcon: SiSass,
+    label: "Sass",
+  },
+];
+
+const SOFT_SKILLS = [
+  {
+    ReactIcon: IoBookSharp,
+    label: "Rápido Aprendizaje",
+  },
+  {
+    ReactIcon: IoPeopleSharp,
+    label: "Trabajo en Equipo",
+  },
+  {
+    ReactIcon: IoExtensionPuzzleSharp,
+    label: "Solución de Problemas",
+  },
+  {
+    ReactIcon: IoBulbSharp,
+    label: "Creatividad",
+  },
+  {
+    ReactIcon: BiShapeCircle,
+    label: "Adaptabilidad",
+  },
+  {
+    ReactIcon: IoChatboxEllipsesSharp,
+    label: "Comunicación",
+  },
+];
+
 export const AboutMe = () => {
   return (
     <section id="about-me">
@@ -17,8 +82,7 @@ export const AboutMe = () => {
             className="am-lines first-line"
             viewBox="0 0 382 352"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+            xmlns="http://www.w3.org/2000/svg">
             <path
               d="M383.5 350.5L-1.5 1.50001"
               stroke="#2449CD"
@@ -29,8 +93,7 @@ export const AboutMe = () => {
             className="am-lines second-line"
             viewBox="0 0 398 324"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+            xmlns="http://www.w3.org/2000/svg">
             <path d="M-2 323L400 1" stroke="white" stroke-width="2" />
           </svg>
         </div>
@@ -42,37 +105,43 @@ export const AboutMe = () => {
           utilizando bases de datos no relacionales.
         </p>
       </div>
-      <div className="tech-container">
-        <div className="tech-text-container">
-          <h2 className="tech-title">{`<Tecnologías/>`}</h2>
-          <p>Tecnologías con las que he trabajado recientemente:</p>
+      <div className="skills-container">
+        <div className="skills-type">
+          <div className="type">
+            <IoHardwareChipSharp className="type--icon" />
+            <h3 className="type--title">Hard Skills</h3>
+          </div>
+          <div className="type">
+            <IoPersonSharp className="type--icon" />
+            <h3 className="type--title">Soft Skills</h3>
+          </div>
         </div>
-        <ul className="tech-list">
-          <li className="tech">
-            <SiTypescript className="tech-icon" />
-            <h3>TypeScript</h3>
-          </li>
-          <li className="tech">
-            <SiJavascript className="tech-icon" />
-            <h3>JavaScript (ES6+)</h3>
-          </li>
-          <li className="tech">
-            <SiReact className="tech-icon" />
-            <h3>React</h3>
-          </li>
-          <li className="tech">
-            <SiNodedotjs className="tech-icon" />
-            <h3>NodeJS</h3>
-          </li>
-          <li className="tech">
-            <SiMongodb className="tech-icon" />
-            <h3>MongoDB</h3>
-          </li>
-          <li className="tech">
-            <SiSass className="tech-icon" />
-            <h3>Sass</h3>
-          </li>
-        </ul>
+        <div className="skills">
+          <ul className="skills--list">
+            {HARD_SKILLS.map(({ReactIcon, label}) => {
+              return (
+                <li className="tech">
+                  <ReactIcon className="tech--icon" />
+                  <div className="tech--title">
+                    <h3>{label}</h3>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+          <ul className="skills--list">
+            {SOFT_SKILLS.map(({ReactIcon, label}) => {
+              return (
+                <li className="tech">
+                  <ReactIcon className="tech--icon" />
+                  <div className="tech--title">
+                    <h3>{label}</h3>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   );

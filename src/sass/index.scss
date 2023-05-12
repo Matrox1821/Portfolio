@@ -21,7 +21,7 @@ body {
     overflow-x: hidden;
   }
   section {
-    padding-top: 4rem;
+    padding-top: 6rem;
   }
   p {
     color: $color-light;
@@ -164,44 +164,55 @@ body {
       }
     }
 
-    .tech-container {
+    .skills-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      .tech-text-container {
-        font-size: 20px;
-        color: $color-light;
-        padding-bottom: 1rem;
+      .skills-type {
         text-align: center;
-        .tech-title {
-          color: $color-light;
-          filter: drop-shadow($shadow-secondary--5);
+        padding: 3rem 0 2rem;
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        .type {
+          width: 50%;
+          &--icon {
+            font-size: 3rem;
+            color: $secondary;
+          }
         }
       }
-      .tech-list {
+      .skills {
+        display: inline-flex;
+        justify-content: space-between;
+        gap: 1.5rem;
         width: 100%;
-        gap: 2rem;
-        display: grid;
-        font-size: 15px;
-        grid-template-columns: auto auto;
-        list-style: none;
-        .tech {
+        &--list {
+          width: 50%;
+          gap: 1.5rem;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          height: 6rem;
-          border: 2px solid $secondary;
-          box-shadow: $shadow-secondary--10;
-          padding: 0.5rem;
-          h3 {
-            font-size: 14px;
-            font-weight: 400;
-          }
-          .tech-icon {
-            color: $secondary;
+          .tech {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 6rem;
+            border: 2px solid $secondary;
+            box-shadow: $shadow-secondary--5-2;
             padding: 0.5rem;
-            height: 100px;
-            width: 100px;
+            .tech--icon {
+              color: $secondary;
+              padding: 0.5rem;
+              font-size: 4rem;
+            }
+            .tech--title {
+              display: flex;
+              align-items: center;
+              h3 {
+                font-size: 14px;
+                font-weight: 400;
+              }
+            }
           }
         }
       }

@@ -1,12 +1,13 @@
 @media (320px <= width <= 480px) {
   #home {
+    padding-top: 4rem;
+    padding-bottom: 11rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: calc(100vh - 8rem);
     letter-spacing: 0.5rem;
     justify-content: space-between;
-    padding-bottom: 11rem;
     .title-name {
       margin: 1rem 0;
       font-weight: 400;
@@ -166,14 +167,14 @@
       left: 0;
       z-index: -1;
       position: absolute;
-      top: 43vh;
+      top: 44vh;
       width: 100vw;
       &.first-line {
-        transform: translateY(6rem);
+        transform: translateY(7.2rem);
         filter: drop-shadow($shadow-secondary--5);
       }
       &.second-line {
-        transform: translateY(7.5rem);
+        transform: translateY(8.7rem);
         filter: drop-shadow($shadow-light--5);
       }
     }
