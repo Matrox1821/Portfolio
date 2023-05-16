@@ -30,7 +30,16 @@ const NavItems = () => {
 };
 
 const NavTitle = () => {
-  return <h1 className="navbar__title">Galarza Matías</h1>;
+  return (
+    <Link
+      activeClass="active"
+      to="home"
+      spy={true}
+      smooth={true}
+      duration={500}>
+      <h1 className="navbar__title">Galarza Matías</h1>
+    </Link>
+  );
 };
 
 export const NavBar = () => {
