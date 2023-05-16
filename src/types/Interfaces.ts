@@ -18,3 +18,11 @@ export interface ICard {
   technologies: ITechnologies[];
   link: ILink[];
 }
+
+interface Skill {
+  Icon: IconType;
+  label: string;
+}
+export interface ISkillIcons {
+  skills: Skill[];
+}

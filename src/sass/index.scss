@@ -1,11 +1,13 @@
 @import "vars";
 @import "home";
+@import "about-me";
 @import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Raleway:wght@400;500;700&display=swap");
 body {
   margin: 0;
   font-family: "Raleway", sans-serif;
   background-color: $primary;
   color: $color-light;
+  overflow-x: hidden;
   ul,
   p,
   h3 {
@@ -80,7 +82,7 @@ body {
   }
 }
 
-@media (320px <= width <= 480px) {
+@media (320px <= width <= 768px) {
   //Layout
   .navbar {
     height: 4rem;
@@ -118,107 +120,6 @@ body {
     }
   }
 
-  //About Me
-  #about-me {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    .am-lines {
-      position: absolute;
-      left: 0;
-      z-index: -1;
-      width: 100vw;
-      &.first-line {
-        transform: translateY(4rem);
-        filter: drop-shadow($shadow-secondary--5);
-      }
-      &.second-line {
-        transform: translateY(-1rem);
-        filter: drop-shadow($shadow-light--5);
-      }
-    }
-
-    .am-container {
-      padding: 1rem;
-      background-color: $primary;
-      border: 2px solid $secondary;
-      box-shadow: $shadow-secondary--10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      .am-image {
-        height: 10rem;
-        width: 10rem;
-        padding: 1rem;
-      }
-      .am-line {
-        border: none;
-        height: 2px;
-        width: 80vw;
-        background-color: $secondary;
-        box-shadow: $shadow-secondary--15;
-      }
-      .am-text {
-        padding: 1rem;
-        font-size: 18px;
-      }
-    }
-
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      .skills-type {
-        text-align: center;
-        padding: 3rem 0 2rem;
-        display: inline-flex;
-        justify-content: space-between;
-        gap: 1.5rem;
-        width: 100%;
-        .type {
-          width: 50%;
-          &--icon {
-            font-size: 3rem;
-            color: $secondary;
-          }
-        }
-      }
-      .skills {
-        display: inline-flex;
-        justify-content: space-between;
-        gap: 1.5rem;
-        width: 100%;
-        &--list {
-          width: 50%;
-          gap: 1.5rem;
-          display: flex;
-          flex-direction: column;
-          .tech {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 6rem;
-            border: 2px solid $secondary;
-            box-shadow: $shadow-secondary--5-2;
-            padding: 0.5rem;
-            .tech--icon {
-              color: $secondary;
-              padding: 0.5rem;
-              font-size: 4rem;
-            }
-            .tech--title {
-              display: flex;
-              align-items: center;
-              h3 {
-                font-size: 14px;
-                font-weight: 400;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
   #proyects {
     height: 1000px;
   }
@@ -234,16 +135,69 @@ body {
 }
 @media (hover: hover) {
   .title-name:hover {
-    text-shadow: $shadow-light--35;
-  }
-  .title-name.hover-style {
-    text-shadow: $shadow-light--35;
+    text-shadow: $shadow-secondary--35;
   }
   .title-name.hover-style:hover {
     text-shadow: none;
   }
 }
-@media (width>1400px) {
+@media (width>769px) {
+  //Layout
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $secondary;
+  }
+  .navbar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    width: 100vw;
+    background-color: $primary-op-96;
+    position: fixed;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0px 1rem 1.4rem $primary;
+    h1 {
+      color: $secondary;
+      text-shadow: $shadow-secondary--15;
+      margin: 0;
+      padding-left: 3rem;
+      font-weight: 400;
+    }
+    &__list {
+      display: inline-flex;
+      justify-content: space-evenly;
+      align-items: center;
+      list-style: none;
+      gap: 1rem;
+      padding-right: 3rem;
+      .list__logo {
+        font-size: 0.875rem;
+        cursor: pointer;
+        font-weight: 400;
+        &.active {
+          font-size: 2rem;
+          color: $color-light;
+          text-shadow: $shadow-secondary--15;
+        }
+      }
+      .list__option {
+        font-size: 0.875rem;
+        cursor: pointer;
+        &.active {
+          font-size: 1.25rem;
+          color: $color-light;
+          text-shadow: $shadow-light--15;
+        }
+      }
+    }
+  }
+
   /* .container-image {
     margin: 2rem;
     display: inline-flex;

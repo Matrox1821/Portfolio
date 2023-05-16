@@ -1,83 +1,31 @@
 import React from "react";
-import {BiShapeCircle} from "react-icons/bi";
-import {
-  IoBookSharp,
-  IoPeopleSharp,
-  IoExtensionPuzzleSharp,
-  IoBulbSharp,
-  IoChatboxEllipsesSharp,
-  IoPersonSharp,
-  IoHardwareChipSharp,
-} from "react-icons/io5";
-import {
-  SiTypescript,
-  SiJavascript,
-  SiReact,
-  SiNodedotjs,
-  SiMongodb,
-  SiSass,
-} from "react-icons/si";
+import {IoPersonSharp, IoHardwareChipSharp} from "react-icons/io5";
+import {HARD_SKILLS, SOFT_SKILLS} from "../helpers/Icons";
+import {BsFilePersonFill} from "react-icons/bs";
 import asta_edit from "../assets/Asta-edit.jpg";
+import {ISkillIcons} from "../types/Interfaces";
 
-const HARD_SKILLS = [
-  {
-    ReactIcon: SiTypescript,
-    label: "Typescript",
-  },
-  {
-    ReactIcon: SiJavascript,
-    label: "JavaScript (ES6+)",
-  },
-  {
-    ReactIcon: SiReact,
-    label: "React",
-  },
-  {
-    ReactIcon: SiNodedotjs,
-    label: "NodeJS",
-  },
-  {
-    ReactIcon: SiMongodb,
-    label: "MongoDB",
-  },
-  {
-    ReactIcon: SiSass,
-    label: "Sass",
-  },
-];
-
-const SOFT_SKILLS = [
-  {
-    ReactIcon: IoBookSharp,
-    label: "Rápido Aprendizaje",
-  },
-  {
-    ReactIcon: IoPeopleSharp,
-    label: "Trabajo en Equipo",
-  },
-  {
-    ReactIcon: IoExtensionPuzzleSharp,
-    label: "Solución de Problemas",
-  },
-  {
-    ReactIcon: IoBulbSharp,
-    label: "Creatividad",
-  },
-  {
-    ReactIcon: BiShapeCircle,
-    label: "Adaptabilidad",
-  },
-  {
-    ReactIcon: IoChatboxEllipsesSharp,
-    label: "Comunicación",
-  },
-];
+const SkillIcons = ({skills}: ISkillIcons) => {
+  const SkillElement = skills.map(({Icon, label}) => {
+    return (
+      <li className="skill">
+        <Icon className="skill--icon" />
+        <h3 className="skill--title">{label}</h3>
+      </li>
+    );
+  });
+  return <>{SkillElement}</>;
+};
 
 export const AboutMe = () => {
   return (
     <section id="about-me">
-      <div className="am-container">
-        <div className="am-lines">
+      <div className="title-container">
+        <BsFilePersonFill className="icon" />
+        <h2>Sobre Mi</h2>
+      </div>
+      <div className="container">
+        {/* <div className="am-lines">
           <svg
             className="am-lines first-line"
             viewBox="0 0 382 352"
@@ -96,10 +44,14 @@ export const AboutMe = () => {
             xmlns="http://www.w3.org/2000/svg">
             <path d="M-2 323L400 1" stroke="white" stroke-width="2" />
           </svg>
-        </div>
-        <img src={asta_edit} className="am-image" alt="imagen de repuesto" />
-        <hr className="am-line" />
-        <p className="am-text">
+        </div> */}
+        <img
+          src={asta_edit}
+          className="container--image"
+          alt="imagen de repuesto"
+        />
+        <hr className="container--line" />
+        <p className="container--text">
           &nbsp;&nbsp;Soy un desarrollador Front-End especializado en React con
           el uso de TypeScript. También tengo conocimientos en el Back-End
           utilizando bases de datos no relacionales.
@@ -118,28 +70,10 @@ export const AboutMe = () => {
         </div>
         <div className="skills">
           <ul className="skills--list">
-            {HARD_SKILLS.map(({ReactIcon, label}) => {
-              return (
-                <li className="tech">
-                  <ReactIcon className="tech--icon" />
-                  <div className="tech--title">
-                    <h3>{label}</h3>
-                  </div>
-                </li>
-              );
-            })}
+            <SkillIcons skills={HARD_SKILLS} />
           </ul>
           <ul className="skills--list">
-            {SOFT_SKILLS.map(({ReactIcon, label}) => {
-              return (
-                <li className="tech">
-                  <ReactIcon className="tech--icon" />
-                  <div className="tech--title">
-                    <h3>{label}</h3>
-                  </div>
-                </li>
-              );
-            })}
+            <SkillIcons skills={SOFT_SKILLS} />
           </ul>
         </div>
       </div>
