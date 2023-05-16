@@ -363,7 +363,7 @@
   }
 }
 
-@media (width>=769px) {
+@media (min-width: 769px) {
   #home {
     display: flex;
     letter-spacing: 0.5rem;
@@ -403,6 +403,7 @@
       }
       .line-image {
         display: flex;
+        margin: 2rem;
         align-items: flex-end;
         transition: 0.5s ease-in-out;
         flex-direction: row;
@@ -482,10 +483,10 @@
         width: 100vw;
         filter: drop-shadow($shadow-secondary--5);
         &.first-line {
-          transform: translateY(-3.4rem);
+          transform: translateY(-12.4rem);
         }
         &.second-line {
-          transform: translateY(-1.7rem);
+          transform: translateY(-34.7rem);
         }
       }
 
@@ -548,7 +549,7 @@
         filter: drop-shadow($shadow-secondary--5);
       }
       &.second-line {
-        transform: translateY(8.7rem);
+        transform: translateY(5.7rem);
         filter: drop-shadow($shadow-light--5);
       }
     }

@@ -1,6 +1,6 @@
 import React from "react";
 import {IoPersonSharp, IoHardwareChipSharp} from "react-icons/io5";
-import {HARD_SKILLS, SOFT_SKILLS} from "../helpers/Icons";
+import {SKILLS} from "../helpers";
 import {BsFilePersonFill} from "react-icons/bs";
 import asta_edit from "../assets/Asta-edit.jpg";
 import {ISkillIcons} from "../types/Interfaces";
@@ -18,6 +18,7 @@ const SkillIcons = ({skills}: ISkillIcons) => {
 };
 
 export const AboutMe = () => {
+  const {HARD_SKILLS, SOFT_SKILLS} = SKILLS;
   return (
     <section id="about-me">
       <div className="title-container">
@@ -25,7 +26,7 @@ export const AboutMe = () => {
         <h2>Sobre Mi</h2>
       </div>
       <div className="container">
-        {/* <div className="am-lines">
+        <div className="am-lines">
           <svg
             className="am-lines first-line"
             viewBox="0 0 382 352"
@@ -44,7 +45,7 @@ export const AboutMe = () => {
             xmlns="http://www.w3.org/2000/svg">
             <path d="M-2 323L400 1" stroke="white" stroke-width="2" />
           </svg>
-        </div> */}
+        </div>
         <img
           src={asta_edit}
           className="container--image"

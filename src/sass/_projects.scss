@@ -1,0 +1,16 @@
+@media (max-width: 480px) {
+  #projects {
+    .projects-icon {
+      font-size: 3rem;
+      color: $secondary;
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #projects {
+    height: 1000px;
+  }
+}
+@media (min-width: 769px) {
+}

@@ -4,7 +4,7 @@ import {useIsDesktop} from "../../../hooks/useIsDesktop";
 const sections = [
   {name: "GM", href: "home", type: "logo"},
   {name: "Sobre Mí", href: "about-me"},
-  {name: "Proyectos", href: "proyects"},
+  {name: "Proyectos", href: "projects"},
   {name: "Portafolio", href: "resume"},
   {name: "Contacto", href: "contact"},
 ];

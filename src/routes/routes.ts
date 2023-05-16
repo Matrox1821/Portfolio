@@ -1,7 +1,7 @@
 import {AboutMe} from "../pages/AboutMe";
 import {Contact} from "../pages/Contact";
 import {Home} from "../pages/Home";
-import {Proyects} from "../pages/Proyects";
+import {Proyects} from "../pages/Projects";
 import {Resume} from "../pages/Resume";
 
 export const routes = [
