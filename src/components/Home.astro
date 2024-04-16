@@ -27,7 +27,15 @@ import CVName from "./ui/CVName.astro";
       <div><Pdf /><SocialCircle /><SocialArrow /> <CVName /></div>
     </div>
   </article>
-  <figure><Image src={Matias} alt="" class="matias-image" /></figure>
+  <figure>
+    <Image
+      src={Matias}
+      alt="Foto de Matias Galarza"
+      class="matias-image"
+      decoding="async"
+      loading="lazy"
+    />
+  </figure>
 </section>
 <style>
   #home {
