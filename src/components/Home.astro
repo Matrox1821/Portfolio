@@ -1,0 +1,183 @@
+---
+import Matias from "./../assets/matias.png";
+import {Image} from "astro:assets";
+import WebDeveloper from "./ui/WebDeveloper.astro";
+import GitHub from "./icons/GitHub.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Pdf from "./icons/Pdf.astro";
+import SocialCircle from "./ui/SocialCircle.astro";
+import SocialArrow from "./ui/SocialArrow.astro";
+import LinkedInName from "./ui/LinkedInName.astro";
+import GitHubName from "./ui/GitHubName.astro";
+import CVName from "./ui/CVName.astro";
+---
+
+<section id="home">
+  <article>
+    <h1>
+      Galarza Matías
+      <span>Desarrollador Web</span>
+    </h1>
+    <WebDeveloper />
+    <div class="socials">
+      <div><GitHub /><SocialCircle /><SocialArrow /><GitHubName /></div>
+      <div>
+        <LinkedIn /><SocialCircle /><SocialArrow /><LinkedInName />
+      </div>
+      <div><Pdf /><SocialCircle /><SocialArrow /> <CVName /></div>
+    </div>
+  </article>
+  <figure><Image src={Matias} alt="" class="matias-image" /></figure>
+</section>
+<style>
+  #home {
+    width: 100%;
+    height: calc(100vh - 12rem);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 6rem;
+    position: relative;
+    margin-top: 4rem;
+    gap: 1rem;
+    article {
+      h1 {
+        display: none;
+      }
+      .socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        z-index: 0;
+        & > div {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          & .social-svg + .social-circle + .social-arrow {
+            transform: translateY(3.8rem);
+          }
+          & #pdf + .social-circle {
+            transform: translateX(-0.3rem);
+            & > path {
+              stroke: #f48284;
+            }
+            & + .social-arrow {
+              transform: translate(-0.2rem, 3.8rem);
+              & > path {
+                stroke: #f48284;
+              }
+              & + .name-svg {
+                width: 2.5rem;
+                transform: translate(-0.2rem, 6rem);
+              }
+            }
+          }
+          & #github + .social-circle > path,
+          & #github + .social-circle + .social-arrow > path {
+            stroke: #ced4da;
+          }
+          & #linkedin + .social-circle > path,
+          & #linkedin + .social-circle + .social-arrow > path {
+            stroke: #0a66c2;
+          }
+        }
+      }
+      .social-svg {
+        z-index: 1;
+      }
+    }
+    figure {
+      margin: 0;
+      width: 15rem;
+      height: 15rem; /* 
+      border: solid 1px var(--text-accent);
+      border-radius: 2rem; */
+      background: image(url("./../assets/photo-bg.png"))
+
+      & > .matias-image {
+        width: 15rem;
+        height: 15rem;
+        object-fit: contain;
+        /* mask-image: linear-gradient(to bottom, black 95%, transparent 100%); */
+      }
+    }
+  }
+
+  @media (width>768px) {
+    #home {
+      width: 100%;
+      height: calc(100vh - 12rem);
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 6rem;
+      margin-top: 5rem;
+      justify-content: space-between;
+      article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        h1 {
+          display: none;
+        }
+        .socials {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+        }
+      }
+      figure {
+        margin: 0;
+        width: 25rem;
+        height: 25rem;
+        background-repeat: no-repeat;
+        background-image: url("./../assets/photo-bg.png");
+        background-size: contain;
+        /*background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 100%
+          ); */
+        position: relative;
+        & > .matias-image {
+          width: 25rem;
+          height: 25rem;
+          position: relative;
+          bottom: 6.2px;
+          object-fit: contain;
+
+          /* mask-image: linear-gradient(to bottom, black 95%, transparent 100%); */
+        }
+      }
+    }
+  }
+  @media (hover: hover) {
+    .socials > div:hover > :global(.social-svg) {
+      transform: scale(1.2);
+    }
+    .socials > div:hover > :global(.social-circle) {
+      animation: draw 0.5s forwards;
+    }
+    .socials > div:hover > :global(.social-arrow) {
+      animation: draw 1s forwards;
+    }
+    .socials > div:hover > :global(.name-svg) {
+      opacity: 1;
+    }
+
+    @keyframes draw {
+      from {
+        stroke-dashoffset: 900;
+        stroke-dasharray: 900;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+</style>

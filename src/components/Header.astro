@@ -1,0 +1,157 @@
+---
+import LinkBg from "./ui/LinkBg.astro";
+import LogoSvg from "./ui/LogoSvg.astro";
+
+interface Props {
+  headerNav: {href: string; label: string}[];
+}
+
+const {headerNav} = Astro.props;
+---
+
+<header>
+  <button class="logo">
+    <span>Matías<span class="dot">.tsx</span></span>
+    <LogoSvg />
+  </button>
+
+  <nav>
+    {
+      headerNav.map(({href, label}: {href: string; label: string}) => {
+        if (href === "#home")
+          return (
+            <>
+              <button class="link" id="home-nav">
+                <span>{label}</span>
+                <LinkBg />
+              </button>
+            </>
+          );
+        return (
+          <>
+            <a class="link" href={href} id={href.replace("#", "") + "-nav"}>
+              <span>{label}</span>
+              <LinkBg />
+            </a>
+          </>
+        );
+      })
+    }
+  </nav>
+</header>
+
+<style>
+  .bg {
+    background-color: rgb(2 6 23);
+  }
+  header {
+    width: 100%;
+    max-width: 60rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    .logo {
+      font-family: Quicksand, sans-serif;
+      color: var(--text-accent);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      .link {
+        font-family: Quicksand, sans-serif;
+        background-color: transparent;
+        border: none;
+        color: #eee;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-weight: 400;
+      }
+    }
+  }
+  @media (width>480px) {
+    header {
+      position: fixed;
+      height: 3rem;
+      z-index: 1;
+      .logo {
+        color: var(--text-accent);
+        text-decoration: none;
+        font-size: 1.7rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .dot {
+        font-size: 1rem;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        .link {
+          cursor: pointer;
+          z-index: 1;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  @media (hover: hover) {
+    .logo:hover {
+      .logo-svg {
+        animation: draw 0.5s forwards;
+      }
+    }
+    .link {
+      position: relative;
+      min-width: 4rem;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        z-index: 1;
+        font-weight: 700;
+      }
+      &:hover > span + .link-bg {
+        animation: draw 0.5s forwards;
+
+        color: var(--text-accent);
+      }
+    }
+    @keyframes draw {
+      from {
+        stroke-dashoffset: 900;
+        stroke-dasharray: 900;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+</style>
+
+<script>
+  const homeLink = document.getElementById("home-nav");
+  const logoToHomeLink = document.querySelector(".logo");
+
+  const scrollToTop = () => {
+    window.history.replaceState("", "", "/");
+    window.scrollTo({top: 0});
+  };
+
+  homeLink?.addEventListener("click", scrollToTop);
+  logoToHomeLink?.addEventListener("click", scrollToTop);
+</script>

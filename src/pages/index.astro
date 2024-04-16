@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Home from "../components/Home.astro";
+import AboutMe from "../components/AboutMe.astro";
+---
+
+<Layout title="Galarza Matías - Portfolio">
+  <Home />
+  <AboutMe />
+  <Card
+    href="https://docs.astro.build/"
+    title="Documentation"
+    body="Learn how Astro works and explore the official API docs."
+  />
+</Layout>
+
+<style>
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+</style>
