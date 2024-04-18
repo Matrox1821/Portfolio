@@ -462,7 +462,8 @@
     d="M379.098 143.115C379.967 150.367 382.457 157.537 384.799 164.424C385.322 165.964 391.436 180.913 392.4 179.78C394.221 177.64 397.234 165.616 400.624 169.337C403.058 172.009 405.1 175.089 407.206 178.019C410.337 182.375 410.732 177.302 411.56 174.276C414.298 164.277 417.53 153.492 419.104 143.298"
     stroke="#BA99FF"
     stroke-width="4"
-    stroke-linecap="round"></path>
+    stroke-linecap="round"
+    class="w-letter"></path>
   <path
     d="M424.765 173.249C426.942 172.51 441.071 167.804 432.997 164.124C428.074 161.881 420.401 165.375 420.478 171.156C420.617 181.508 432.841 182.504 439.565 177.515"
     stroke="#BA99FF"
@@ -588,12 +589,31 @@
   .number-svg {
     animation: 1.7s linear infinite alternate-reverse fade;
   }
+  .w-letter {
+    transform-box: fill-box;
+    transform-origin: center center;
+    animation: 4s linear infinite wiggle;
+  }
   @keyframes fade {
     0% {
       opacity: 1;
     }
     100% {
       opacity: 0;
+    }
+  }
+  @keyframes wiggle {
+    0%,
+    12%,
+    100% {
+      transform: rotate(0deg);
+    }
+    2%,
+    10% {
+      transform: rotate(10deg);
+    }
+    6% {
+      transform: rotate(-10deg);
     }
   }
 </style>
