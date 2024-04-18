@@ -1,12 +1,36 @@
 ---
-import GitHub from "./icons/GitHub.astro";
-import LinkedIn from "./icons/LinkedIn.astro";
-import Pdf from "./icons/Pdf.astro";
+import {Image} from "astro:assets";
+import Matias from "./../assets/matias.png";
 ---
 
-<section id="about-me"></section>
-<style>
-  #about-me {
-    height: 100vh;
-  }
-</style>
+<section id="about-me">
+  <div>
+    <figure class="picture">
+      <Image src={Matias} alt="" />
+    </figure>
+    <p>
+      ¡Hola! Me llamo Matías, soy de Buenos Aires, Argentina. Estudié en la
+      Técnica N°4 de Berazategüi, hoy en día estudio un la UNAJ y me dedico a
+      crear y diseñar páginas web con diseños confortables.
+    </p>
+  </div>
+  <style>
+    #about-me {
+      height: 100vh;
+      p {
+        width: 50rem;
+        text-wrap: pretty;
+      }
+    }
+    .picture {
+      width: 6rem;
+      height: 6rem;
+      margin: 0;
+    }
+    .picture > img {
+      width: 6rem;
+      height: 6rem;
+      object-fit: contain;
+    }
+  </style>
+</section>

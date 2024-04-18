@@ -20,11 +20,15 @@ import CVName from "./ui/CVName.astro";
     </h1>
     <WebDeveloper />
     <div class="socials">
-      <div><GitHub /><SocialCircle /><SocialArrow /><GitHubName /></div>
-      <div>
+      <a href="https://github.com/Matrox1821" target="_blank"
+        ><GitHub /><SocialCircle /><SocialArrow /><GitHubName /></a
+      >
+      <a href="https://www.linkedin.com/in/galarza-matias/" target="_blank">
         <LinkedIn /><SocialCircle /><SocialArrow /><LinkedInName />
-      </div>
-      <div><Pdf /><SocialCircle /><SocialArrow /> <CVName /></div>
+      </a>
+      <a href="" target="_blank"
+        ><Pdf /><SocialCircle /><SocialArrow /> <CVName /></a
+      >
     </div>
   </article>
   <figure>
@@ -59,7 +63,7 @@ import CVName from "./ui/CVName.astro";
         align-items: center;
         gap: 3rem;
         z-index: 0;
-        & > div {
+        & > a {
           position: relative;
           display: flex;
           justify-content: center;
@@ -101,16 +105,13 @@ import CVName from "./ui/CVName.astro";
     figure {
       margin: 0;
       width: 15rem;
-      height: 15rem; /* 
-      border: solid 1px var(--text-accent);
-      border-radius: 2rem; */
-      background: image(url("./../assets/photo-bg.png"))
+      height: 15rem;
+      background: url("./../assets/photo-bg.png");
 
       & > .matias-image {
         width: 15rem;
         height: 15rem;
         object-fit: contain;
-        /* mask-image: linear-gradient(to bottom, black 95%, transparent 100%); */
       }
     }
   }
@@ -146,11 +147,6 @@ import CVName from "./ui/CVName.astro";
         background-repeat: no-repeat;
         background-image: url("./../assets/photo-bg.png");
         background-size: contain;
-        /*background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.1) 0%,
-          transparent 100%
-          ); */
         position: relative;
         & > .matias-image {
           width: 25rem;
@@ -158,23 +154,21 @@ import CVName from "./ui/CVName.astro";
           position: relative;
           bottom: 6.2px;
           object-fit: contain;
-
-          /* mask-image: linear-gradient(to bottom, black 95%, transparent 100%); */
         }
       }
     }
   }
   @media (hover: hover) {
-    .socials > div:hover > :global(.social-svg) {
+    .socials > a:hover > :global(.social-svg) {
       transform: scale(1.2);
     }
-    .socials > div:hover > :global(.social-circle) {
+    .socials > a:hover > :global(.social-circle) {
       animation: draw 0.5s forwards;
     }
-    .socials > div:hover > :global(.social-arrow) {
+    .socials > a:hover > :global(.social-arrow) {
       animation: draw 1s forwards;
     }
-    .socials > div:hover > :global(.name-svg) {
+    .socials > a:hover > :global(.name-svg) {
       opacity: 1;
     }
 
