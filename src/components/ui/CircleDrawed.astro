@@ -4,7 +4,7 @@
   viewBox="0 0 133 135"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
-  class="social-circle">
+  class="circle">
   <path
     d="M111.021 20.1793C101.385 12.6853 90.9915 11.0925 78.6891 10.3393C-15.8257 4.55269 -25.5099 130.204 73.0663 131.934C111.036 132.6 140.386 88.2606 126.483 52.5108C112.546 16.672 75.2133 3.31073 40.0319 3.31073"
     stroke="#3F5787"
@@ -13,11 +13,17 @@
 </svg>
 
 <style>
-  .social-circle {
-    position: absolute;
-    width: 4.75rem;
-    z-index: 1;
-    stroke-dashoffset: 900;
-    stroke-dasharray: 900;
+  .circle {
+    display: none;
+  }
+  @media (hover: hover) {
+    .circle {
+      display: block;
+      position: absolute;
+      width: 5.5rem;
+      z-index: 2;
+      stroke-dashoffset: 900;
+      stroke-dasharray: 900;
+    }
   }
 </style>

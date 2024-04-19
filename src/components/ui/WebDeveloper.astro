@@ -563,7 +563,8 @@
 
 <style>
   .web-developer {
-    width: 25rem;
+    height: auto;
+    width: 20rem;
   }
   .if-svg {
     animation: 1s linear infinite alternate-reverse fade;
@@ -614,6 +615,12 @@
     }
     6% {
       transform: rotate(-10deg);
+    }
+  }
+  @media (width>1024px) {
+    .web-developer {
+      height: auto;
+      width: 30rem;
     }
   }
 </style>

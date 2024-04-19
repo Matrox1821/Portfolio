@@ -4,7 +4,7 @@
   viewBox="0 0 216 65"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
-  class="name-svg">
+  class="logo-name">
   <path
     d="M38.4302 5.25966C34.7532 5.11258 30.7235 4.22021 27.0934 5.1197C21.8834 6.41067 17.0637 11.3076 13.2607 14.7769C7.27783 20.235 4 29.8291 4 37.6838C4 44.3743 7.53818 51.8073 13.8439 54.7589C20.1738 57.7219 27.5838 58.6031 34.5113 58.1413C37.6653 57.931 41.6227 53.5612 42.769 50.8867C44.6617 46.4702 44.0184 40.1631 43.8886 35.491C43.8054 32.4935 40.938 33.3916 38.5235 33.3916C35.5532 33.3916 32.583 33.3916 29.6127 33.3916"
     stroke="#ced4da"
@@ -62,11 +62,18 @@
     stroke-linecap="round"></path>
 </svg>
 <style>
-  .name-svg {
-    position: absolute;
-    width: 5rem;
+  .logo-name {
+    width: 4rem;
     height: auto;
-    transform: translateY(6rem);
-    opacity: 0;
+    opacity: 1;
+  }
+  @media (hover: hover) {
+    .logo-name {
+      position: absolute;
+      width: 4.5rem;
+      height: auto;
+      transform: translateY(6.5rem);
+      opacity: 0;
+    }
   }
 </style>

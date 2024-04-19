@@ -13,10 +13,15 @@
 </svg>
 <style>
   .link-bg {
-    position: absolute;
-    width: calc(100% + 2rem);
-    z-index: 0;
-    stroke-dashoffset: 900;
-    stroke-dasharray: 900;
+    display: none;
+  }
+  @media (hover: hover) {
+    .link-bg {
+      position: absolute;
+      width: calc(100% + 2rem);
+      z-index: 0;
+      stroke-dashoffset: 900;
+      stroke-dasharray: 900;
+    }
   }
 </style>

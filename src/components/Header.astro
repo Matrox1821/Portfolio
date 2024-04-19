@@ -41,9 +41,6 @@ const {headerNav} = Astro.props;
 </header>
 
 <style>
-  .bg {
-    background-color: rgb(2 6 23);
-  }
   header {
     width: 100%;
     max-width: 60rem;
@@ -51,7 +48,6 @@ const {headerNav} = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     z-index: 10;
     .logo {
       font-family: Quicksand, sans-serif;
@@ -81,7 +77,6 @@ const {headerNav} = Astro.props;
   }
   @media (width>480px) {
     header {
-      position: fixed;
       height: 3rem;
       z-index: 1;
       .logo {
@@ -99,6 +94,18 @@ const {headerNav} = Astro.props;
       nav {
         display: flex;
         justify-content: center;
+        gap: 1rem;
+        .link {
+          cursor: pointer;
+          z-index: 1;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  @media (width>768px) {
+    header {
+      nav {
         gap: 2rem;
         .link {
           cursor: pointer;
@@ -106,6 +113,11 @@ const {headerNav} = Astro.props;
           font-size: 1.2rem;
         }
       }
+    }
+  }
+  @media (width>1024px) {
+    header {
+      position: fixed;
     }
   }
   @media (hover: hover) {

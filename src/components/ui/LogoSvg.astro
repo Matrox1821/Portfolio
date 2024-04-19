@@ -19,11 +19,17 @@
 
 <style>
   .logo-svg {
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-    transform: translateY(1.5rem);
-    stroke-dashoffset: 900;
-    stroke-dasharray: 900;
+    display: none;
+  }
+  @media (hover: hover) {
+    .logo-svg {
+      position: absolute;
+      width: 100%;
+      z-index: 0;
+      transform: translateY(1.5rem);
+      stroke-dashoffset: 900;
+      stroke-dasharray: 900;
+      display: block;
+    }
   }
 </style>
