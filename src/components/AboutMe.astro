@@ -1,36 +1,136 @@
 ---
-import {Image} from "astro:assets";
-import Matias from "./../assets/matias.png";
+import GitHubSvg from "./icons/svg/GitHubSvg.astro";
 ---
 
 <section id="about-me">
-  <div>
-    <figure class="picture">
-      <Image src={Matias} alt="" />
-    </figure>
-    <p>
-      ¡Hola! Me llamo Matías, soy de Buenos Aires, Argentina. Estudié en la
-      Técnica N°4 de Berazategüi, hoy en día estudio un la UNAJ y me dedico a
-      crear y diseñar páginas web con diseños confortables.
-    </p>
-  </div>
+  <article class="about-me">
+    <div class="title">
+      <h2>Sobre Mí</h2>
+    </div>
+    <div>
+      <p>
+        ¡Hola! Me llamo Matías, soy de Buenos Aires, Argentina. Estudié en la
+        Técnica N°4 de Berazategüi, hoy en día estudio un la UNAJ y me dedico a
+        crear y diseñar páginas web con diseños confortables.
+      </p>
+    </div>
+  </article>
+  <article class="technologies shine">
+    <div class="tech-title"><h2>Tecnologías</h2></div>
+    <div>
+      <ul>
+        <li><GitHubSvg /></li>
+        <li><GitHubSvg /></li>
+        <li><GitHubSvg /></li>
+        <li><GitHubSvg /></li>
+        <li><GitHubSvg /></li>
+        <li><GitHubSvg /></li>
+      </ul>
+    </div>
+  </article>
   <style>
     #about-me {
       height: 100vh;
-      p {
-        width: 50rem;
-        text-wrap: balance;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .about-me,
+    .technologies {
+      width: 100%;
+      border: 2px solid #9999ff;
+      border-radius: 1rem;
+      background-color: rgb(2 6 23);
+      box-sizing: border-box;
+      background-image: repeating-linear-gradient(
+          -45deg,
+          #9999ff1f,
+          #9999ff1f 1px,
+          transparent 1px,
+          transparent 6px
+        ),
+        repeating-linear-gradient(
+          55deg,
+          #9999ff1f,
+          #9999ff1f 1px,
+          transparent 1px,
+          transparent 8px,
+          #9999ff1f 8px,
+          #9999ff1f 9px,
+          transparent 9px,
+          transparent 20px
+        );
+    }
+    div {
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    .title {
+      width: 100%;
+      backdrop-filter: blur(2px);
+      border-radius: 0.95rem 0.95rem 0 0;
+      border-bottom: 1px solid #9999ff;
+    }
+    .tech-title {
+      overflow: hidden;
+      width: 100%;
+      background-color: rgb(2 6 23);
+      border-radius: 0.95rem 0.95rem 0 0;
+      border-bottom: 1px solid #9999ff;
+      background-position: 0;
+      position: relative;
+      &::after {
+        content: "";
+        width: 3rem;
+        height: 10rem;
+        position: absolute;
+        transform: rotate(35deg);
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgb(194, 194, 194) 60%,
+          rgb(255, 255, 255) 65%,
+          transparent 100%
+        );
+        top: -25px;
+        left: 0;
+        opacity: 0.4;
+        animation: 3s glare linear infinite;
       }
     }
-    .picture {
-      width: 6rem;
-      height: 6rem;
+    h2 {
+      text-transform: uppercase;
       margin: 0;
+      font-size: 1.75rem;
     }
-    .picture > img {
-      width: 6rem;
-      height: 6rem;
-      object-fit: contain;
+    p {
+      max-width: 80ch;
+      width: 100%;
+      text-wrap: balance;
+      font-size: 1.1rem;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(3, 3rem);
+      justify-content: center;
+      gap: 2rem;
+      li {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+    @keyframes glare {
+      0 {
+        left: -150px;
+      }
+      40%,
+      100% {
+        left: 110%;
+      }
     }
   </style>
 </section>

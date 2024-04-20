@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import Header from "../components/ui/Header.astro";
 
 interface Props {
   title: string;
@@ -25,19 +25,17 @@ const {title} = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <Header
+      headerNav={[
+        {href: "#home", label: "Inicio"},
+        {href: "#about-me", label: "Sobre mí"},
+        {href: "#projects", label: "Proyectos"},
+        {href: "#contact", label: "contacto"},
+      ]}
+    />
     <div class="background"></div>
-    <div class="background-header"></div>
-    <div class="background-header-grid"></div>
 
     <main>
-      <Header
-        headerNav={[
-          {href: "#home", label: "Inicio"},
-          {href: "#about-me", label: "Sobre mí"},
-          {href: "#projects", label: "Proyectos"},
-          {href: "#contact", label: "contacto"},
-        ]}
-      />
       <slot />
     </main>
   </body>
@@ -92,63 +90,38 @@ const {title} = Astro.props;
   button {
     padding: 0;
   }
-
-  .background,
-  .background-header,
-  .background-header-grid {
+  .background {
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
-  }
-  .background {
     bottom: 0;
     background: linear-gradient(to bottom, #111422 1px, transparent 1px),
       linear-gradient(to right, #111422 1px, transparent 1px);
     background-size: 1rem 1.99rem;
     z-index: -1;
   }
-  .background-header {
-    height: 4rem;
-    background-color: rgb(2 6 23);
-    z-index: 1;
-    display: none;
-  }
-  .background-header-grid {
-    height: 4rem;
-    background: linear-gradient(to bottom, #111422 1px, transparent 1px),
-      linear-gradient(to right, #111422 1px, transparent 1px);
-    background-size: 1rem 1.99rem;
-    z-index: 1;
-    display: none;
-  }
+
   @media (width >480px) {
     body {
       margin: 1rem;
     }
   }
   @media (width>768px) {
-    .background,
-    .background-header-grid {
+    .background {
       background-size: 1rem 1.67rem;
-    }
-    .background-header,
-    .background-header-grid {
-      display: block !important;
-      height: 5rem;
     }
   }
 </style>
 
-//Icons
 <style is:global>
+  /* Icons  */
   .icon {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     gap: 1rem;
     & > a.link,
     & > a.link > .logo {
@@ -189,13 +162,17 @@ const {title} = Astro.props;
       & .arrow {
         transform: translate(-0.4rem, 4.2rem);
       }
-      & .logo-name {
-        transform: translate(-0.4rem, 6.5rem);
-      }
     }
   }
 
   @media (hover: hover) {
+    & .icon:has(> .link > .cv) .logo-name {
+      transform: translate(-0.4rem, 6.5rem);
+    }
+    .icon > .link {
+      z-index: 5 !important;
+      cursor: pointer !important;
+    }
     .icon:hover {
       & > .link > .logo {
         transform: scale(1.2);
