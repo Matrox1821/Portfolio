@@ -2,11 +2,15 @@
 import GitHubName from "../ui/GitHubName.astro";
 import SocialArrow from "../ui/SocialArrow.astro";
 import CircleDrawed from "../ui/CircleDrawed.astro";
-import GitHubSvg from "./svg/GitHubSvg.astro";
+import GitHubSvg from "./social-networks/GitHubSvg.astro";
 ---
 
 <div class="icon">
-  <a href="https://github.com/Matrox1821" target="_blank" class="link">
+  <a
+    href="https://github.com/Matrox1821"
+    target="_blank"
+    class="link"
+    aria-label="Perfil de Github">
     <GitHubSvg />
   </a>
   <CircleDrawed /><SocialArrow /><GitHubName />

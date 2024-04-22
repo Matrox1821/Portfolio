@@ -1,143 +1,289 @@
 ---
 import Clover from "../assets/Clover.astro";
-import GitHubSvg from "./icons/svg/GitHubSvg.astro";
+import Css from "./icons/technologies/Css.astro";
+import NextJs from "./icons/technologies/NextJs.astro";
+import React from "./icons/technologies/React.astro";
+import TypeScript from "./icons/technologies/TypeScript.astro";
+import AstroIcon from "./icons/technologies/AstroIcon.astro";
+import Html from "./icons/technologies/Html.astro";
+import JavaScript from "./icons/technologies/JavaScript.astro";
+import Express from "./icons/technologies/Express.astro";
+import NodeJs from "./icons/technologies/NodeJs.astro";
+import MongoDb from "./icons/technologies/MongoDb.astro";
+import PostgreSql from "./icons/technologies/PostgreSql.astro";
+import TailwindCss from "./icons/technologies/TailwindCss.astro";
 ---
 
 <section id="about-me">
-  <Clover />
   <article class="about-me">
-    <div class="title">
-      <h2>Sobre Mí</h2>
-    </div>
-    <div>
-      <p>
-        ¡Hola! Me llamo <span>Matías</span>, soy de Buenos Aires, Argentina.
-        Estudié en la Técnica N°4 de Berazategüi, actualmente estudio un la<span
-          >UNAJ</span
-        >.
-      </p>
-      <p>
-        Me especializo en diseñar páginas web con diseños atractivos y código
-        eficiente.
-      </p>
-    </div>
+    <section>
+      <header>
+        <Clover />
+        <h2>Sobre Mí</h2>
+      </header>
+      <article class="container">
+        <p>
+          ¡Hola! Me llamo <span>Matías</span>. Actualmente estudio un la <span
+            >UNAJ</span
+          > y me especializo en diseñar <span>páginas web</span> con estilos <span
+            >atractivos</span
+          > y código <span>eficiente</span>.
+        </p>
+      </article>
+      <section>
+        <header class="title"><Clover /><h2>Tecnologías</h2></header>
+        <article class="container">
+          <ul>
+            <li class="card">
+              <div class="inner">
+                <React />
+                <span> React </span>
+              </div>
+            </li>
+            <li class="card">
+              <div class="inner"><NextJs /> <span> NextJs </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><TypeScript /><span> TypeScript </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><Css /><span> CSS </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><TailwindCss /><span> TailwindCSS </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><AstroIcon /><span> Astro </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><NodeJs /><span> NodeJs </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><Express /><span> Express </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><MongoDb /><span> MongoDb </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><PostgreSql /><span> PostgreSQL </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><JavaScript /><span> JavaScript </span></div>
+            </li>
+            <li class="card">
+              <div class="inner"><Html /><span> HTML </span></div>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </section>
   </article>
-  <article class="technologies shine">
-    <div class="tech-title"><h2>Tecnologías</h2></div>
-    <div>
-      <ul>
-        <li><GitHubSvg /></li>
-        <li><GitHubSvg /></li>
-        <li><GitHubSvg /></li>
-        <li><GitHubSvg /></li>
-        <li><GitHubSvg /></li>
-        <li><GitHubSvg /></li>
-      </ul>
-    </div>
-  </article>
-  <style>
-    #about-me {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+</section>
+
+<style>
+  #about-me {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 5rem 0 0;
+  }
+  .about-me,
+  .technologies {
+    width: 100%;
+    border: 3px solid #9999ff;
+    border-radius: 1rem;
+    background-color: rgb(2 6 23);
+    box-sizing: border-box;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #9999ff1f,
+        #9999ff1f 1px,
+        transparent 1px,
+        transparent 6px
+      ),
+      repeating-linear-gradient(
+        55deg,
+        #9999ff1f,
+        #9999ff1f 1px,
+        transparent 1px,
+        transparent 8px,
+        #9999ff1f 8px,
+        #9999ff1f 9px,
+        transparent 9px,
+        transparent 20px
+      );
+  }
+  .container {
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  header {
+    padding: 1rem;
+    overflow: hidden;
+    width: 100%;
+    background-color: rgb(2 6 23);
+    border-radius: 0.95rem 0.95rem 0 0;
+    border-bottom: 1px solid #9999ff;
+    background-position: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    &::after {
+      content: "";
+      width: 3rem;
+      height: 10rem;
+      position: absolute;
+      transform: rotate(35deg);
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgb(194, 194, 194) 60%,
+        rgb(255, 255, 255) 65%,
+        transparent 100%
+      );
+      top: -25px;
+      left: -6rem;
+      opacity: 0.4;
+      animation: 3s glare linear infinite;
     }
-    .about-me,
-    .technologies {
-      width: 100%;
-      border: 2px solid #9999ff;
-      border-radius: 1rem;
-      background-color: rgb(2 6 23);
-      box-sizing: border-box;
-      background-image: repeating-linear-gradient(
-          -45deg,
-          #9999ff1f,
-          #9999ff1f 1px,
-          transparent 1px,
-          transparent 6px
-        ),
-        repeating-linear-gradient(
-          55deg,
-          #9999ff1f,
-          #9999ff1f 1px,
-          transparent 1px,
-          transparent 8px,
-          #9999ff1f 8px,
-          #9999ff1f 9px,
-          transparent 9px,
-          transparent 20px
-        );
+  }
+  .about-me section:not(:first-child) > header {
+    border-top: 1px solid #9999ff;
+    border-radius: 0;
+  }
+  h2 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 1.75rem;
+  }
+  p {
+    max-width: 70ch;
+    width: 100%;
+    text-wrap: pretty;
+    font-size: 1.2rem;
+    margin: 0;
+    & > span {
+      color: #9999ff;
+      font-weight: 700;
     }
-    div {
-      padding: 1rem;
-      box-sizing: border-box;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 5.6rem);
+    justify-content: center;
+    gap: 0.75rem;
+    @keyframes spin {
+      from {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
     }
-    .title {
-      width: 100%;
-      backdrop-filter: blur(2px);
-      border-radius: 0.95rem 0.95rem 0 0;
-      border-bottom: 1px solid #9999ff;
-    }
-    .tech-title {
-      overflow: hidden;
-      width: 100%;
-      background-color: rgb(2 6 23);
-      border-radius: 0.95rem 0.95rem 0 0;
-      border-bottom: 1px solid #9999ff;
-      background-position: 0;
+    .card {
+      width: 5.6rem;
+      height: 5.6rem;
+      border-radius: 0.5rem;
       position: relative;
-      &::after {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .inner {
+        border: 1px solid #99f;
+        padding: 0.45rem;
+        background: rgb(2 6 23);
+        border-radius: 0.5rem;
+        z-index: 2;
+        width: 4.5rem;
+        height: 4.5rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+        span {
+          font-size: 0.9rem;
+        }
+        /* &::after {
+          content: "";
+          width: 2rem;
+          height: 10rem;
+          position: absolute;
+          transform: rotate(35deg);
+          background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgb(194, 194, 194) 60%,
+            rgb(255, 255, 255) 65%,
+            transparent 100%
+          );
+          top: -20px;
+          left: -6rem;
+          opacity: 0.4;
+          animation: 3.5s glare linear infinite;
+        } */
+      }
+      &:hover .inner {
+        border: none;
+      }
+      &:hover::before {
         content: "";
-        width: 3rem;
-        height: 10rem;
-        position: absolute;
-        transform: rotate(35deg);
+        display: block;
         background: linear-gradient(
           90deg,
           transparent 0%,
-          rgb(194, 194, 194) 60%,
-          rgb(255, 255, 255) 65%,
+          #9999ff 50%,
           transparent 100%
         );
-        top: -25px;
-        left: 0;
-        opacity: 0.4;
-        animation: 3s glare linear infinite;
-      }
-    }
-    h2 {
-      text-transform: uppercase;
-      margin: 0;
-      font-size: 1.75rem;
-    }
-    p {
-      max-width: 80ch;
-      width: 100%;
-      text-wrap: balance;
-      font-size: 1.1rem;
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      width: 100%;
-      grid-template-columns: repeat(3, 3rem);
-      justify-content: center;
-      gap: 2rem;
-      li {
         width: 3rem;
-        height: 3rem;
+        height: 7rem;
+        transform: translate(0);
+        position: absolute;
+        animation: rotate 5s linear forwards infinite;
+        z-index: 1;
+        top: 2rem;
+        transform-origin: top center;
       }
     }
-    @keyframes glare {
-      0 {
-        left: -150px;
-      }
-      40%,
-      100% {
-        left: 110%;
-      }
+  }
+  @keyframes glare {
+    0 {
+      left: -150px;
     }
-  </style>
-</section>
+    40%,
+    100% {
+      left: 130%;
+    }
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @media (width> 480px) {
+    ul {
+      grid-template-columns: repeat(4, 5.6rem);
+    }
+  }
+  @media (width> 768px) {
+    ul {
+      grid-template-columns: repeat(6, 5.6rem);
+    }
+  }
+</style>

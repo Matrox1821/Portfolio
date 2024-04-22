@@ -61,6 +61,7 @@ const {title} = Astro.props;
       rgb(var(--accent-light)) 30%,
       white 60%
     );
+    --angle: 90deg;
   }
   html {
     font-family: Quicksand, sans-serif;
@@ -75,7 +76,7 @@ const {title} = Astro.props;
     justify-content: center;
     align-items: center;
     background-color: rgb(2 6 23);
-    margin: 0.5rem;
+    margin: 1rem;
     color: var(--text);
   }
   main {
@@ -130,6 +131,10 @@ const {title} = Astro.props;
       height: 2.5rem;
     }
   }
+  .tech-icon {
+    width: 3rem;
+    height: 3rem;
+  }
   @media (width>768px) {
     .icon {
       display: flex;
@@ -166,12 +171,15 @@ const {title} = Astro.props;
   }
 
   @media (hover: hover) {
-    & .icon:has(> .link > .cv) .logo-name {
+    .icon:has(> .link > .cv) .logo-name {
       transform: translate(-0.4rem, 6.5rem);
     }
     .icon > .link {
       z-index: 5 !important;
       cursor: pointer !important;
+    }
+    .icon > .link > .logo {
+      transition: transform 0.1s linear;
     }
     .icon:hover {
       & > .link > .logo {

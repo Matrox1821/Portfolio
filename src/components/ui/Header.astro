@@ -54,11 +54,11 @@ const {headerNav} = Astro.props;
     justify-content: center;
     align-items: center;
     z-index: 20;
-    padding-inline: 0.5rem;
+    padding: 1.5rem 0;
     div {
       width: 100vw;
       max-width: 60rem;
-      height: 2rem;
+      height: 100%;
       flex: 1;
       display: flex;
       justify-content: space-between;
@@ -67,17 +67,20 @@ const {headerNav} = Astro.props;
       position: fixed;
       top: 0;
       box-sizing: border-box;
-      padding: 0.5rem;
+      padding: 1rem;
       transition: background-color 0.2s linear;
       .logo {
         font-family: Quicksand, sans-serif;
         color: var(--text-accent);
         text-decoration: none;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: bold;
         background-color: transparent;
         border: none;
         cursor: pointer;
+      }
+      .dot {
+        font-size: 0.8rem;
       }
       nav {
         display: flex;
@@ -91,7 +94,7 @@ const {headerNav} = Astro.props;
           text-decoration: none;
           cursor: pointer;
           font-size: 0.8rem;
-          font-weight: 400;
+          font-weight: 600;
         }
       }
     }

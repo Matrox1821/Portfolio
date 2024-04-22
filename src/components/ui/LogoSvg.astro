@@ -8,13 +8,14 @@
   <path
     d="M3 9.32573C47.7256 9.32573 92.3975 3 137.246 3"
     stroke="#9999FF"
-    stroke-width="5"
+    stroke-width="2"
     stroke-linecap="round"></path>
   <path
     d="M22.6799 20.5715C54.1831 14.2709 90.174 14.6227 122.486 12.1372"
     stroke="#9999FF"
-    stroke-width="4"
-    stroke-linecap="round"></path>
+    stroke-width="2"
+    stroke-linecap="round"
+    class="line-two"></path>
 </svg>
 
 <style>
@@ -26,10 +27,13 @@
       position: absolute;
       width: 100%;
       z-index: 0;
-      transform: translateY(1.5rem);
+      transform: translateY(1.2rem);
       stroke-dashoffset: 900;
       stroke-dasharray: 900;
       display: block;
+    }
+    .line-two {
+      transform: translateY(-0.3rem);
     }
   }
 </style>

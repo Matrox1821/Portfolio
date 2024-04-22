@@ -2,14 +2,15 @@
 import LinkedInName from "../ui/LinkedInName.astro";
 import SocialArrow from "../ui/SocialArrow.astro";
 import CircleDrawed from "../ui/CircleDrawed.astro";
-import LinkedInSvg from "./svg/LinkedInSvg.astro";
+import LinkedInSvg from "./social-networks/LinkedInSvg.astro";
 ---
 
 <div class="icon">
   <a
     href="https://www.linkedin.com/in/galarza-matias"
     target="_blank"
-    class="link">
+    class="link"
+    aria-label="Perfil de LinkedIn">
     <LinkedInSvg />
   </a>
   <CircleDrawed /><SocialArrow /><LinkedInName />
