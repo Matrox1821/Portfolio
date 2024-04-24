@@ -9,12 +9,21 @@ import PostgreSql from "./icons/technologies/PostgreSql.astro";
 import LinkIcon from "./icons/social-networks/LinkIcon.astro";
 import GitHubSvg from "./icons/social-networks/GitHubSvg.astro";
 import React from "./icons/technologies/React.astro";
+import ProjectCard from "./ui/cards/ProjectCard.astro";
 ---
 
 <section id="projects">
-  <article class="project">
-    <section class="image-container">
-      <div class="technologies">
+  <header>
+    <h2>Proyectos</h2>
+  </header>
+  <article>
+    <ProjectCard
+      title="Learn Languages Online"
+      description={[
+        "Una página para aprender distintos idiomas de una manera fácil y divertida.",
+        "En este proyecto aprendí a manejar bases de datos y a trabajar en equipo, hizo que mejore mi lógica en Back-End y el uso de los datos dinámicos.",
+      ]}>
+      <div class="technologies" slot="technologies">
         <TypeScript />
         <NextJs />
         <PostgreSql />
@@ -25,32 +34,24 @@ import React from "./icons/technologies/React.astro";
         alt="Demostración del proyecto Learn Languages Online"
         class="demostration"
         loading="lazy"
+        slot="demostration"
       />
-    </section>
-    <section class="description">
-      <h2>Learn Languages Online</h2>
-      <p>
-        ¿Quieres aprender idiomas grátis y fácil sin tener que descargar
-        Duolingo? Esta página es para tí.
-      </p>
-      <p>
-        En este proyecto aprendí a manejar bases de datos y a trabajar en
-        equipo, hizo que mejore mi lógica en Back-End y el uso de los datos
-        dinámicos.
-      </p>
-    </section>
-    <section class="links">
-      <a href="https://learn-languages-zeta.vercel.app" target="_blank">
-        <LinkIcon /></a
-      >
-      <a href="https://github.com/fatso1000/learn-languages" target="_blank"
-        ><GitHubSvg />
-      </a>
-    </section>
-  </article>
-  <article class="project">
-    <section class="image-container">
-      <div class="technologies">
+      <div class="links" slot="links">
+        <a href="https://learn-languages-zeta.vercel.app" target="_blank">
+          <LinkIcon /></a
+        >
+        <a href="https://github.com/fatso1000/learn-languages" target="_blank"
+          ><GitHubSvg />
+        </a>
+      </div>
+    </ProjectCard>
+    <ProjectCard
+      title="Calculadora"
+      description={[
+        "Una calculadora que permite resolver todo tipo de cuentas básicas.",
+        "Este fue un buen proyecto para empezar, me hizo mejorar mi lógica y aprendí cómo manejar estados.",
+      ]}>
+      <div class="technologies" slot="technologies">
         <TypeScript />
         <React />
       </div>
@@ -59,89 +60,96 @@ import React from "./icons/technologies/React.astro";
         alt="Demostración del proyecto Calculadora"
         class="demostration"
         loading="lazy"
+        slot="demostration"
       />
-    </section>
-    <section class="description">
-      <h2>Calculadora</h2>
-      <p>
-        ¿No tienes una calculadora a mano? ¿No te gusta la calculadora del
-        teléfono? No te preocupes! Esta calculadora, con un agradable diseño te
-        dará las mejores soluciones.
-      </p>
-      <p>
-        Este fue un buen proyecto para empezar, me hizo mejorar mi lógica y
-        aprendí cómo manejar estados.
-      </p>
-    </section>
-    <section class="links">
-      <a href="https://calculadora-galarza-matias.netlify.app" target="_blank">
-        <LinkIcon /></a
-      >
-      <a href="https://github.com/Matrox1821/calculator" target="_blank"
-        ><GitHubSvg />
-      </a>
-    </section>
+      <div class="links" slot="links">
+        <a
+          href="https://calculadora-galarza-matias.netlify.app"
+          target="_blank">
+          <LinkIcon /></a
+        >
+        <a href="https://github.com/Matrox1821/calculator" target="_blank"
+          ><GitHubSvg />
+        </a>
+      </div>
+    </ProjectCard>
   </article>
 </section>
 
 <style>
   #projects {
-    min-height: 100vh;
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
   }
-  .project {
-    border: solid 2px #99f;
-    background-color: rgb(2 6 23);
-    border-radius: 1rem;
+  h2 {
+    text-transform:;
     padding: 1rem;
+    overflow: hidden;
+    width: 100%;
+    background-color: rgb(2 6 23);
+    border-radius: 0.95rem;
+    border: 3px solid #9999ff;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    &::after {
+      content: "";
+      width: 3rem;
+      height: 10rem;
+      position: absolute;
+      transform: rotate(35deg);
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgb(194, 194, 194) 60%,
+        rgb(255, 255, 255) 65%,
+        transparent 100%
+      );
+      top: -25px;
+      left: -6rem;
+      opacity: 0.4;
+      animation: 3s glare linear infinite;
+    }
+  }
+  .technologies {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem;
+    background-color: rgba(2, 6, 23, 0.5);
+    border-radius: 0.5rem;
+    border: 1px solid rgb(2 6 23);
+    margin: 0.25rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    .image-container {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: end;
-      position: relative;
-      gap: 0.5rem;
-      .technologies {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 0.5rem;
-        background-color: rgba(2, 6, 23, 0.5);
-        border-radius: 0.5rem;
-        border: 1px solid rgb(2 6 23);
-        margin: 0.25rem;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        backdrop-filter: blur(3px);
-      }
-      .demostration {
-        aspect-ratio: 16/9;
-        width: 100%;
-        max-width: 30rem;
-        height: auto;
-        border-radius: 0.5rem;
-      }
-    }
-    .description {
-      width: 100%;
-      h2 {
-        margin: 0 0 0.5rem 0;
-      }
-      p {
-        margin: 0.5rem 0;
-      }
-    }
-    .links {
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
+    gap: 0.25rem;
+    backdrop-filter: blur(3px);
+  }
+  .demostration {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+  .links {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  @media (width>768px) {
+    #projects article {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>

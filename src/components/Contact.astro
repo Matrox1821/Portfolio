@@ -1,0 +1,223 @@
+---
+import Ok from "./icons/status-icons/Ok.astro";
+import Error from "./icons/status-icons/Error.astro";
+---
+
+<section id="contact">
+  <h2>Contacto</h2>
+  <article>
+    <form id="email-form" method="POST">
+      <label class="name">
+        Nombre
+        <input name="name" type="text" />
+      </label>
+      <label class="email">
+        Email
+        <input name="email" type="email" required />
+      </label>
+      <label class="subject">
+        Asunto
+        <input name="subject" type="text" required />
+      </label>
+      <label class="message">
+        Mensaje
+        <textarea name="message" required></textarea>
+      </label>
+    </form>
+    <button type="submit" class="submit-button">
+      <span class="send">Send</span>
+      <span class="spinner"></span>
+      <Ok />
+      <Error />
+    </button>
+  </article>
+</section>
+<style>
+  #contact {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
+  article {
+    width: 100%;
+    border-color: #99f;
+    border-style: solid;
+    border-width: 0 3px 3px;
+    background-color: rgb(2 6 23);
+    border-radius: 0 0 1rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  h2 {
+    padding: 1rem;
+    overflow: hidden;
+    width: 100%;
+    background-color: rgb(2 6 23);
+    border-radius: 0.95rem 0.95rem 0 0;
+    border-color: #99f;
+    border-style: solid;
+    border-width: 3px 3px 1px;
+    background-position: 0;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    &::after {
+      content: "";
+      width: 3rem;
+      height: 10rem;
+      position: absolute;
+      transform: rotate(35deg);
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgb(194, 194, 194) 60%,
+        rgb(255, 255, 255) 65%,
+        transparent 100%
+      );
+      top: -25px;
+      left: -6rem;
+      opacity: 0.4;
+      animation: 3s glare linear infinite;
+    }
+  }
+  #email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-weight: 600;
+    width: 100%;
+    input,
+    textarea {
+      padding: 0.5rem;
+      font-weight: 400;
+      border: 1px solid #99f;
+      background-color: rgb(2 6 23);
+      border-radius: 0.5rem;
+      color: #fff;
+      font-family: Quicksand, sans-serif;
+      &:focus-visible {
+        outline-width: 1px;
+        outline-style: solid;
+        outline-color: #99f;
+      }
+    }
+    input {
+      height: 1.5rem;
+    }
+    textarea {
+      min-height: 3rem;
+      field-sizing: content;
+      resize: none;
+    }
+  }
+  button {
+    font-family: Quicksand, sans-serif;
+    border: 2px solid #99f;
+    background-color: rgb(2 6 23);
+    border-radius: 0.5rem;
+    width: auto;
+    height: 2.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .spinner {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid #99f;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    display: none;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @media (width>768px) {
+    #email-form {
+      display: grid;
+      grid: auto-flow / 1fr 1fr;
+    }
+    .name {
+      grid-column: 1/2;
+    }
+    .email {
+      grid-column: 2/3;
+    }
+    .subject {
+      grid-column: 1/3;
+    }
+    .message {
+      grid-column: 1/3;
+    }
+  }
+</style>
+<script>
+  import emailjs from "@emailjs/browser";
+
+  (function () {
+    emailjs.init({
+      publicKey: "DkJP36O5LzWOg693v",
+    });
+  })();
+  const submitButton = document.querySelector(".submit-button") as HTMLElement;
+  const sendText = document.querySelector(".send") as HTMLElement;
+  const spinner = document.querySelector(".spinner") as HTMLElement;
+  const okSvg = document.querySelector(".ok") as HTMLElement;
+  const errorSvg = document.querySelector(".error") as HTMLElement;
+
+  document
+    .getElementById("email-form")
+    ?.addEventListener("submit", function (event: any) {
+      event.preventDefault();
+      let formData = new FormData(this as HTMLFormElement);
+      submitButton.style.borderColor = "#99f";
+      sendText.style.display = "none";
+      okSvg.style.display = "none";
+      errorSvg.style.display = "none";
+      spinner.style.display = "block";
+
+      var emailBody = {
+        fromEmail: formData.get("email"),
+        toEmail: "matiasgg1821@gmail.com",
+        subject: formData.get("subject"),
+        message: formData.get("message"),
+        name: formData.get("name"),
+      };
+
+      // Send email using EmailJS
+      emailjs.send("service_5i5r2eh", "template_7mgv326", emailBody).then(
+        function (response) {
+          submitButton.style.borderColor = "#76F174";
+          spinner.style.display = "none";
+          okSvg.style.display = "block";
+        },
+        function (error) {
+          submitButton.style.borderColor = "#EF6D6D";
+          spinner.style.display = "none";
+          errorSvg.style.display = "block";
+        }
+      );
+    });
+</script>

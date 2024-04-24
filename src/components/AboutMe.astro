@@ -1,5 +1,5 @@
 ---
-import Clover from "../assets/Clover.astro";
+import Clover from "./icons/Clover.astro";
 import Css from "./icons/technologies/Css.astro";
 import NextJs from "./icons/technologies/NextJs.astro";
 import React from "./icons/technologies/React.astro";
@@ -15,86 +15,85 @@ import TailwindCss from "./icons/technologies/TailwindCss.astro";
 ---
 
 <section id="about-me">
-  <article class="about-me">
-    <section>
-      <header>
-        <Clover />
-        <h2>Sobre Mí</h2>
-      </header>
-      <article class="container">
-        <p>
-          ¡Hola! Me llamo <span>Matías</span>. Actualmente estudio un la <span
-            >UNAJ</span
-          > y me especializo en diseñar <span>páginas web</span> con estilos <span
-            >atractivos</span
-          > y código <span>eficiente</span>.
-        </p>
-      </article>
-      <section>
-        <header class="title"><Clover /><h2>Tecnologías</h2></header>
-        <article class="container">
-          <ul>
-            <li class="card">
-              <div class="inner">
-                <React />
-                <span> React </span>
-              </div>
-            </li>
-            <li class="card">
-              <div class="inner"><NextJs /> <span> NextJs </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><TypeScript /><span> TypeScript </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><Css /><span> CSS </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><TailwindCss /><span> TailwindCSS </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><AstroIcon /><span> Astro </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><NodeJs /><span> NodeJs </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><Express /><span> Express </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><MongoDb /><span> MongoDb </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><PostgreSql /><span> PostgreSQL </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><JavaScript /><span> JavaScript </span></div>
-            </li>
-            <li class="card">
-              <div class="inner"><Html /><span> HTML </span></div>
-            </li>
-          </ul>
-        </article>
-      </section>
+  <article>
+    <header>
+      <Clover />
+      <h2>Sobre Mí</h2>
+    </header>
+    <section class="container">
+      <p>
+        ¡Hola! Me llamo <span>Matías</span>. Actualmente estudio un la <span
+          >UNAJ</span
+        > y me especializo en diseñar <span>páginas web</span> con estilos <span
+          >atractivos</span
+        > y código <span>eficiente</span>.
+      </p>
+    </section>
+  </article>
+  <article>
+    <header class="title"><Clover /><h3>Tecnologías</h3></header>
+    <section class="container bottom">
+      <ul>
+        <li class="card">
+          <div class="inner">
+            <React />
+            <span> React </span>
+          </div>
+        </li>
+        <li class="card">
+          <div class="inner"><NextJs /> <span> Next.js </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><TypeScript /><span> TypeScript </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><Css /><span> CSS </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><TailwindCss /><span> TailwindCSS </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><AstroIcon /><span> Astro </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><NodeJs /><span> Node.js </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><Express /><span> Express </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><MongoDb /><span> MongoDB </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><PostgreSql /><span> PostgreSQL </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><JavaScript /><span> JavaScript </span></div>
+        </li>
+        <li class="card">
+          <div class="inner"><Html /><span> HTML </span></div>
+        </li>
+      </ul>
     </section>
   </article>
 </section>
 
 <style>
   #about-me {
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 5rem 0 0;
+    padding-top: 5rem;
   }
-  .about-me,
-  .technologies {
-    width: 100%;
-    border: 3px solid #9999ff;
-    border-radius: 1rem;
+  .container {
     background-color: rgb(2 6 23);
+    border-color: #9999ff;
+    border-style: solid;
+    border-width: 0 3px;
+    padding: 2rem 1.5rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     background-image: repeating-linear-gradient(
         -45deg,
         #9999ff1f,
@@ -114,12 +113,9 @@ import TailwindCss from "./icons/technologies/TailwindCss.astro";
         transparent 20px
       );
   }
-  .container {
-    padding: 2rem 1.5rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .container.bottom {
+    border-radius: 0 0 1rem 1rem;
+    border-width: 0 3px 3px;
   }
   header {
     padding: 1rem;
@@ -127,7 +123,9 @@ import TailwindCss from "./icons/technologies/TailwindCss.astro";
     width: 100%;
     background-color: rgb(2 6 23);
     border-radius: 0.95rem 0.95rem 0 0;
-    border-bottom: 1px solid #9999ff;
+    border-color: #9999ff;
+    border-style: solid;
+    border-width: 3px 3px 1px;
     background-position: 0;
     position: relative;
     display: flex;
@@ -153,14 +151,18 @@ import TailwindCss from "./icons/technologies/TailwindCss.astro";
       animation: 3s glare linear infinite;
     }
   }
-  .about-me section:not(:first-child) > header {
+  #about-me article:not(:first-child) > header {
     border-top: 1px solid #9999ff;
     border-radius: 0;
   }
-  h2 {
+  h2,
+  h3 {
     text-transform: uppercase;
     margin: 0;
     font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
   }
   p {
     max-width: 70ch;

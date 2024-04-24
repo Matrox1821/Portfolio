@@ -33,15 +33,13 @@ import CV from "./icons/CV.astro";
 <style>
   #home {
     width: 100%;
-    height: calc(100vh - 7.5rem);
+    height: calc(100vh - 3rem);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;
     position: relative;
-    margin-top: 1rem;
-    gap: 1rem;
+    gap: 3rem;
     figure {
       margin: 0;
       width: 12.5rem;
@@ -58,7 +56,7 @@ import CV from "./icons/CV.astro";
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5rem;
+      gap: 3rem;
       h1 {
         display: none;
       }
@@ -73,20 +71,16 @@ import CV from "./icons/CV.astro";
   }
   @media (width>480px) {
     #home {
-      margin-top: 0;
-      margin-bottom: 2rem;
-      height: calc(100vh - 7rem);
+      height: calc(100vh - 3rem);
     }
   }
   @media (width>768px) {
     #home {
       width: 100%;
-      height: calc(100vh - 12rem);
+      height: calc(100vh - 3rem);
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
-      margin-bottom: 6rem;
-      margin-top: 5rem;
       justify-content: space-between;
       article {
         display: flex;
