@@ -1,12 +1,17 @@
 ---
-import CVName from "../ui/CVName.astro";
-import CircleDrawed from "../ui/CircleDrawed.astro";
-import SocialArrow from "../ui/SocialArrow.astro";
+import GalarzaMatiasCV from "./../../assets/resume/GalarzaMatiasCV.pdf";
+import CVName from "./social-network-names/CVName.astro";
+import CircleDrawed from "../astro-svg/CircleDrawed.astro";
+import SocialArrow from "../astro-svg/SocialArrow.astro";
 import CVSvg from "./social-networks/CVSvg.astro";
 ---
 
 <div class="icon">
-  <a href="https://github.com/Matrox1821" target="_blank" class="link">
+  <a
+    href={GalarzaMatiasCV}
+    download="Galarza Matías CV"
+    class="link"
+    aria-label="Descargar el Currículum Vitae de Galarza Matías">
     <CVSvg />
   </a>
   <CircleDrawed /><SocialArrow /><CVName />

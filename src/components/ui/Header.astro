@@ -1,6 +1,6 @@
 ---
-import LinkBg from "./LinkBg.astro";
-import LogoSvg from "./LogoSvg.astro";
+import NavLink from "../astro-svg/NavLink.astro";
+import Logo from "../astro-svg/Logo.astro";
 
 interface Props {
   headerNav: {href: string; label: string}[];
@@ -13,7 +13,7 @@ const {headerNav} = Astro.props;
   <div>
     <button class="logo">
       <span>Matías<span class="dot">.tsx</span></span>
-      <LogoSvg />
+      <Logo />
     </button>
 
     <nav>
@@ -21,20 +21,20 @@ const {headerNav} = Astro.props;
         headerNav.map(({href, label}: {href: string; label: string}) => {
           if (href === "#home")
             return (
-              <>
-                <button class="link" id="home-nav">
-                  <span>{label}</span>
-                  <LinkBg />
-                </button>
-              </>
+              <button class="link" id="home-nav">
+                <span>{label}</span>
+                <NavLink />
+              </button>
             );
           return (
-            <>
-              <a class="link" href={href} id={href.replace("#", "") + "-nav"}>
-                <span>{label}</span>
-                <LinkBg />
-              </a>
-            </>
+            <a
+              class="link"
+              href={href}
+              id={href.replace("#", "") + "-nav"}
+              aria-label={`ir hacia la sección ${label}`}>
+              <span>{label}</span>
+              <NavLink />
+            </a>
           );
         })
       }
@@ -69,7 +69,6 @@ const {headerNav} = Astro.props;
       padding: 0 1rem;
       transition: background-color 0.2s linear;
       .logo {
-        font-family: Quicksand, sans-serif;
         color: var(--text-accent);
         text-decoration: none;
         font-size: 1.2rem;
@@ -86,7 +85,6 @@ const {headerNav} = Astro.props;
         justify-content: center;
         gap: 0.5rem;
         .link {
-          font-family: Quicksand, sans-serif;
           background-color: transparent;
           border: none;
           color: #eee;

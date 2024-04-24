@@ -9,7 +9,7 @@ import PostgreSql from "./icons/technologies/PostgreSql.astro";
 import LinkIcon from "./icons/social-networks/LinkIcon.astro";
 import GitHubSvg from "./icons/social-networks/GitHubSvg.astro";
 import React from "./icons/technologies/React.astro";
-import ProjectCard from "./ui/cards/ProjectCard.astro";
+import ProjectCard from "./ui/ProjectCard.astro";
 ---
 
 <section id="projects">
@@ -37,10 +37,16 @@ import ProjectCard from "./ui/cards/ProjectCard.astro";
         slot="demostration"
       />
       <div class="links" slot="links">
-        <a href="https://learn-languages-zeta.vercel.app" target="_blank">
+        <a
+          href="https://learn-languages-zeta.vercel.app"
+          target="_blank"
+          aria-label="Ir a la página Learn Languages Online">
           <LinkIcon /></a
         >
-        <a href="https://github.com/fatso1000/learn-languages" target="_blank"
+        <a
+          href="https://github.com/fatso1000/learn-languages"
+          target="_blank"
+          aria-label="Ir al repositorio de github de la página Learn Languages Online"
           ><GitHubSvg />
         </a>
       </div>
@@ -65,10 +71,14 @@ import ProjectCard from "./ui/cards/ProjectCard.astro";
       <div class="links" slot="links">
         <a
           href="https://calculadora-galarza-matias.netlify.app"
-          target="_blank">
+          target="_blank"
+          aria-label="Ir a la página Calculadora">
           <LinkIcon /></a
         >
-        <a href="https://github.com/Matrox1821/calculator" target="_blank"
+        <a
+          href="https://github.com/Matrox1821/calculator"
+          target="_blank"
+          aria-label="Ir al repositorio de github de la página Calculadora"
           ><GitHubSvg />
         </a>
       </div>

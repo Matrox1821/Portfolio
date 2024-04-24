@@ -1,0 +1,106 @@
+---
+interface Props {
+  technologies: {
+    label: string;
+    Element: any;
+  }[];
+}
+
+const {technologies} = Astro.props;
+---
+
+<section class="container bottom">
+  <ul>
+    {
+      technologies.map(({label, Element}: any) => (
+        <li class="technology">
+          <div class="inner">
+            <Element />
+            <span> {label} </span>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+<style>
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 5.6rem);
+    justify-content: center;
+    gap: 0.75rem;
+    @keyframes spin {
+      from {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+    .technology {
+      width: 5.6rem;
+      height: 5.6rem;
+      border-radius: 0.5rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .inner {
+        border: 1px solid #99f;
+        padding: 0.45rem;
+        background: rgb(2 6 23);
+        border-radius: 0.5rem;
+        z-index: 2;
+        width: 4.5rem;
+        height: 4.5rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+        span {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  @media (width> 480px) {
+    ul {
+      grid-template-columns: repeat(4, 5.6rem);
+    }
+  }
+  @media (width> 768px) {
+    ul {
+      grid-template-columns: repeat(6, 5.6rem);
+    }
+  }
+  @media (hover: hover) {
+    .technology:hover .inner {
+      border: none;
+    }
+    .technology:hover::before {
+      content: "";
+      display: block;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        #9999ff 50%,
+        transparent 100%
+      );
+      width: 3rem;
+      height: 7rem;
+      transform: translate(0);
+      position: absolute;
+      animation: rotate 5s linear forwards infinite;
+      z-index: 1;
+      top: 2rem;
+      transform-origin: top center;
+    }
+  }
+</style>

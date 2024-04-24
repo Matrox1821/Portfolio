@@ -1,17 +1,7 @@
 ---
-import Clover from "./icons/Clover.astro";
-import Css from "./icons/technologies/Css.astro";
-import NextJs from "./icons/technologies/NextJs.astro";
-import React from "./icons/technologies/React.astro";
-import TypeScript from "./icons/technologies/TypeScript.astro";
-import AstroIcon from "./icons/technologies/AstroIcon.astro";
-import Html from "./icons/technologies/Html.astro";
-import JavaScript from "./icons/technologies/JavaScript.astro";
-import Express from "./icons/technologies/Express.astro";
-import NodeJs from "./icons/technologies/NodeJs.astro";
-import MongoDb from "./icons/technologies/MongoDb.astro";
-import PostgreSql from "./icons/technologies/PostgreSql.astro";
-import TailwindCss from "./icons/technologies/TailwindCss.astro";
+import Clover from "./astro-svg/Clover.astro";
+import Technologies from "./ui/Technologies.astro";
+import {TECH_LIST} from "./../shared/helpers.ts";
 ---
 
 <section id="about-me">
@@ -32,49 +22,7 @@ import TailwindCss from "./icons/technologies/TailwindCss.astro";
   </article>
   <article>
     <header class="title"><Clover /><h3>Tecnologías</h3></header>
-    <section class="container bottom">
-      <ul>
-        <li class="card">
-          <div class="inner">
-            <React />
-            <span> React </span>
-          </div>
-        </li>
-        <li class="card">
-          <div class="inner"><NextJs /> <span> Next.js </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><TypeScript /><span> TypeScript </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><Css /><span> CSS </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><TailwindCss /><span> TailwindCSS </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><AstroIcon /><span> Astro </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><NodeJs /><span> Node.js </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><Express /><span> Express </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><MongoDb /><span> MongoDB </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><PostgreSql /><span> PostgreSQL </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><JavaScript /><span> JavaScript </span></div>
-        </li>
-        <li class="card">
-          <div class="inner"><Html /><span> HTML </span></div>
-        </li>
-      </ul>
-    </section>
+    <Technologies technologies={TECH_LIST} />
   </article>
 </section>
 
@@ -83,40 +31,41 @@ import TailwindCss from "./icons/technologies/TailwindCss.astro";
     display: flex;
     flex-direction: column;
     padding-top: 5rem;
+    & :global(.container) {
+      background-color: rgb(2 6 23);
+      border-color: #9999ff;
+      border-style: solid;
+      border-width: 0 3px;
+      padding: 2rem 1.5rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-image: repeating-linear-gradient(
+          -45deg,
+          #9999ff1f,
+          #9999ff1f 1px,
+          transparent 1px,
+          transparent 6px
+        ),
+        repeating-linear-gradient(
+          55deg,
+          #9999ff1f,
+          #9999ff1f 1px,
+          transparent 1px,
+          transparent 8px,
+          #9999ff1f 8px,
+          #9999ff1f 9px,
+          transparent 9px,
+          transparent 20px
+        );
+    }
+    & :global(.container.bottom) {
+      border-radius: 0 0 1rem 1rem;
+      border-width: 0 3px 3px;
+    }
   }
-  .container {
-    background-color: rgb(2 6 23);
-    border-color: #9999ff;
-    border-style: solid;
-    border-width: 0 3px;
-    padding: 2rem 1.5rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-image: repeating-linear-gradient(
-        -45deg,
-        #9999ff1f,
-        #9999ff1f 1px,
-        transparent 1px,
-        transparent 6px
-      ),
-      repeating-linear-gradient(
-        55deg,
-        #9999ff1f,
-        #9999ff1f 1px,
-        transparent 1px,
-        transparent 8px,
-        #9999ff1f 8px,
-        #9999ff1f 9px,
-        transparent 9px,
-        transparent 20px
-      );
-  }
-  .container.bottom {
-    border-radius: 0 0 1rem 1rem;
-    border-width: 0 3px 3px;
-  }
+
   header {
     padding: 1rem;
     overflow: hidden;
