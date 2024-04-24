@@ -44,12 +44,16 @@ import CV from "./icons/CV.astro";
       margin: 0;
       width: 12.5rem;
       height: 12.5rem;
-      background: url("./../assets/photo-bg.png");
+      background: url("./../assets/photo-bg.webp");
       background-repeat: round;
+      position: relative;
+
       & > .matias-image {
         width: 12.5rem;
         height: 12.5rem;
         object-fit: contain;
+        position: relative;
+        bottom: 0.2rem;
       }
     }
     article {
@@ -104,7 +108,6 @@ import CV from "./icons/CV.astro";
         width: 25rem;
         height: 25rem;
         background-repeat: no-repeat;
-        background-image: url("./../assets/photo-bg.png");
         background-size: contain;
         position: relative;
         & > .matias-image {
