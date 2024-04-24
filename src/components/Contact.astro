@@ -5,8 +5,8 @@ import Error from "./icons/status-icons/Error.astro";
 
 <section id="contact">
   <h2>Contacto</h2>
-  <article>
-    <form id="email-form" method="POST">
+  <form id="email-form" method="POST">
+    <article>
       <label class="name">
         Nombre
         <input name="name" type="text" />
@@ -23,21 +23,21 @@ import Error from "./icons/status-icons/Error.astro";
         Mensaje
         <textarea name="message" required></textarea>
       </label>
-    </form>
+    </article>
     <button type="submit" class="submit-button">
       <span class="send">Send</span>
       <span class="spinner"></span>
       <Ok />
       <Error />
     </button>
-  </article>
+  </form>
 </section>
 <style>
   #contact {
     padding-top: 6rem;
     padding-bottom: 5rem;
   }
-  article {
+  #email-form {
     width: 100%;
     border-color: #99f;
     border-style: solid;
@@ -83,7 +83,7 @@ import Error from "./icons/status-icons/Error.astro";
       animation: 3s glare linear infinite;
     }
   }
-  #email-form {
+  article {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -134,6 +134,9 @@ import Error from "./icons/status-icons/Error.astro";
     display: flex;
     justify-content: center;
     align-items: center;
+    &:active {
+      background-color: rgba(153, 153, 255, 0.185);
+    }
   }
   .spinner {
     width: 1.5rem;
@@ -156,7 +159,7 @@ import Error from "./icons/status-icons/Error.astro";
     }
   }
   @media (width>768px) {
-    #email-form {
+    article {
       display: grid;
       grid: auto-flow / 1fr 1fr;
     }

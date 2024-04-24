@@ -66,7 +66,7 @@ const {headerNav} = Astro.props;
       position: fixed;
       top: 0;
       box-sizing: border-box;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
       transition: background-color 0.2s linear;
       .logo {
         color: var(--text-accent);
@@ -195,7 +195,7 @@ const {headerNav} = Astro.props;
       var windowScroll = window.scrollY;
       if (!header) return;
       if (windowScroll > 60) {
-        header.style.backgroundColor = "#9999ff1c";
+        header.style.backgroundColor = "#020617ba";
         header.style.backdropFilter = "blur(10px)";
         header.style.borderBottom = "1px solid #9999ff";
       } else {
