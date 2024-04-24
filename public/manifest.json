@@ -1,7 +1,7 @@
 {
   "name": "Galarza Matías - Portfolio",
   "short_name": "Galarza Matías",
-  "start_url": "http://localhost:4321/",
+  "start_url": "https://galarza-matias-portfolio.vercel.app/",
   "display": "fullscreen",
   "background_color": "#020617",
   "theme_color": "#020617",
