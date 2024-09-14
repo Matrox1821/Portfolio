@@ -212,12 +212,12 @@ import Error from "./icons/status-icons/Error.astro";
 
       // Send email using EmailJS
       emailjs.send("service_5i5r2eh", "template_7mgv326", emailBody).then(
-        function (response) {
+        function () {
           submitButton.style.borderColor = "#76F174";
           spinner.style.display = "none";
           okSvg.style.display = "block";
         },
-        function (error) {
+        function () {
           submitButton.style.borderColor = "#EF6D6D";
           spinner.style.display = "none";
           errorSvg.style.display = "block";
