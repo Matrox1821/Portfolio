@@ -12,23 +12,22 @@ import PostgreSql from "./../components/icons/technologies/PostgreSql.astro";
 import TailwindCss from "./../components/icons/technologies/TailwindCss.astro";
 
 export const TECH_LIST = [
-  {label: "React", Element: React},
-  {label: "Next.js", Element: NextJs},
-  {label: "TypeScript", Element: TypeScript},
-  {label: "CSS", Element: Css},
-  {label: "Astro", Element: AstroIcon},
-  {label: "TailwindCSS", Element: TailwindCss},
-  {label: "Node.js", Element: NodeJs},
-  {label: "Express", Element: Express},
-  {label: "MongoDB", Element: MongoDb},
-  {label: "PostgreSQL", Element: PostgreSql},
-  {label: "JavaScript", Element: JavaScript},
-  {label: "HTML", Element: Html},
+  { label: "React", Element: React },
+  { label: "Next.js", Element: NextJs },
+  { label: "TypeScript", Element: TypeScript },
+  { label: "CSS", Element: Css },
+  { label: "Astro", Element: AstroIcon },
+  { label: "TailwindCSS", Element: TailwindCss },
+  { label: "Node.js", Element: NodeJs },
+  { label: "Express", Element: Express },
+  { label: "MongoDB", Element: MongoDb },
+  { label: "PostgreSQL", Element: PostgreSql },
+  { label: "JavaScript", Element: JavaScript },
+  { label: "HTML", Element: Html },
 ];
 
-export const HEADER_ITEMS = [
-  {href: "#home", label: "Inicio"},
-  {href: "#about-me", label: "Sobre mí"},
-  {href: "#projects", label: "Proyectos"},
-  {href: "#contact", label: "contacto"},
+export const SECTIONS = [
+  { href: "#home", label: "Inicio" },
+  { href: "#about-me", label: "Sobre mí" },
+  { href: "#projects", label: "Proyectos" },
 ];

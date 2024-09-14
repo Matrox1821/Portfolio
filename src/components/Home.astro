@@ -1,6 +1,6 @@
 ---
 import Matias from "./../assets/matias.webp";
-import {Image} from "astro:assets";
+import { Image } from "astro:assets";
 import WebDeveloper from "./astro-svg/WebDeveloper.astro";
 import GitHub from "./icons/GitHub.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
@@ -8,15 +8,13 @@ import CV from "./icons/CV.astro";
 ---
 
 <section id="home">
-  <figure>
-    <Image
-      src={Matias}
-      alt="Foto de Matias Galarza"
-      class="matias-image"
-      decoding="async"
-      loading="lazy"
-    />
-  </figure>
+  <Image
+    src={Matias}
+    alt="Foto de Matias Galarza"
+    class="matias-image"
+    decoding="async"
+    loading="lazy"
+  />
   <article>
     <h1>
       Galarza Matías
@@ -40,21 +38,33 @@ import CV from "./icons/CV.astro";
     align-items: center;
     position: relative;
     gap: 3rem;
-    figure {
+    .matias-image {
       margin: 0;
-      width: 12.5rem;
-      height: 12.5rem;
-      background: url("./../assets/photo-bg.webp");
-      background-repeat: round;
+      width: 13.5rem;
+      height: 13.5rem;
       position: relative;
-
-      & > .matias-image {
-        width: 12.5rem;
-        height: 12.5rem;
-        object-fit: contain;
-        position: relative;
-        bottom: 0.2rem;
-      }
+      border-radius: 4rem;
+      border: 2px solid #99f;
+      padding: 1rem;
+      background-color: #020617;
+      background-image: repeating-linear-gradient(
+          -45deg,
+          #9999ff1f,
+          #9999ff1f 1px,
+          transparent 1px,
+          transparent 6px
+        ),
+        repeating-linear-gradient(
+          55deg,
+          #9999ff1f,
+          #9999ff1f 1px,
+          transparent 1px,
+          transparent 8px,
+          #9999ff1f 8px,
+          #9999ff1f 9px,
+          transparent 9px,
+          transparent 20px
+        );
     }
     article {
       display: flex;
@@ -91,9 +101,6 @@ import CV from "./icons/CV.astro";
         flex-direction: column;
         align-items: center;
         gap: 2rem;
-        h1 {
-          display: none;
-        }
         .socials {
           display: flex;
           justify-content: center;
@@ -103,20 +110,9 @@ import CV from "./icons/CV.astro";
           gap: 2rem;
         }
       }
-      figure {
-        margin: 0;
-        width: 25rem;
-        height: 25rem;
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: relative;
-        & > .matias-image {
-          width: 25rem;
-          height: 25rem;
-          position: relative;
-          bottom: 6.2px;
-          object-fit: contain;
-        }
+      .matias-image {
+        width: 20rem;
+        height: 20rem;
       }
     }
   }

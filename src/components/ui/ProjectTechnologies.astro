@@ -1,0 +1,27 @@
+---
+interface Props {
+  projectTechs: any[];
+}
+const { projectTechs } = Astro.props;
+---
+
+<div class="technologies" slot="technologies">
+  {projectTechs.map((Tech: any) => <Tech />)}
+
+  <style>
+    .technologies {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.5rem;
+      background-color: rgba(2, 6, 23, 0.5);
+      border-radius: 0.5rem;
+      border: 1px solid rgb(2 6 23);
+      margin: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      backdrop-filter: blur(3px);
+    }
+  </style>
+</div>

@@ -1,0 +1,86 @@
+---
+import { SECTIONS } from "../../shared/helpers";
+import NavLink from "../astro-svg/NavLink.astro";
+---
+
+<nav>
+  {
+    SECTIONS.map(({ href, label }: { href: string; label: string }) => {
+      if (href === "#home")
+        return (
+          <button class="link" id="home-nav">
+            <span>{label}</span>
+            <NavLink />
+          </button>
+        );
+      return (
+        <a
+          class="link"
+          href={href}
+          id={href.replace("#", "") + "-nav"}
+          aria-label={`ir hacia la sección ${label}`}
+        >
+          <span>{label}</span>
+          <NavLink />
+        </a>
+      );
+    })
+  }
+</nav>
+<style>
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    .link {
+      background-color: transparent;
+      border: none;
+      color: #eee;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  }
+  @media (width>480px) {
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      .link {
+        cursor: pointer;
+        z-index: 1;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  @media (width>768px) {
+    nav {
+      gap: 2rem;
+      .link {
+        cursor: pointer;
+        z-index: 1;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  @media (hover: hover) {
+    .link {
+      position: relative;
+      min-width: 4rem;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        z-index: 1;
+        font-weight: 700;
+      }
+      &:hover > span + .link-bg {
+        animation: var(--draw-animation) 0.5s forwards;
+
+        color: var(--text-accent);
+      }
+    }
+  }
+</style>

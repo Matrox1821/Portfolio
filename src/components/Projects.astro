@@ -1,5 +1,5 @@
 ---
-import {Image} from "astro:assets";
+import { Image } from "astro:assets";
 import Calculator from "./../assets/calculator.webp";
 import LearnLanguagesOnline from "./../assets/learn-languages-online.webp";
 import TypeScript from "./icons/technologies/TypeScript.astro";
@@ -9,7 +9,7 @@ import PostgreSql from "./icons/technologies/PostgreSql.astro";
 import LinkIcon from "./icons/social-networks/LinkIcon.astro";
 import GitHubSvg from "./icons/social-networks/GitHubSvg.astro";
 import React from "./icons/technologies/React.astro";
-import ProjectCard from "./ui/ProjectCard.astro";
+import Project from "./ui/Project.astro";
 ---
 
 <section id="projects">
@@ -17,18 +17,14 @@ import ProjectCard from "./ui/ProjectCard.astro";
     <h2>Proyectos</h2>
   </header>
   <article>
-    <ProjectCard
+    <Project
       title="Learn Languages Online"
       description={[
         "Una página para aprender distintos idiomas de una manera fácil y divertida.",
         "En este proyecto aprendí a manejar bases de datos y a trabajar en equipo, hizo que mejore mi lógica en Back-End y el uso de los datos dinámicos.",
-      ]}>
-      <div class="technologies" slot="technologies">
-        <TypeScript />
-        <NextJs />
-        <PostgreSql />
-        <TailwindCss />
-      </div>
+      ]}
+      projectTechs={[TypeScript, NextJs, PostgreSql, TailwindCss]}
+    >
       <Image
         src={LearnLanguagesOnline}
         alt="Demostración del proyecto Learn Languages Online"
@@ -41,27 +37,26 @@ import ProjectCard from "./ui/ProjectCard.astro";
         <a
           href="https://learn-languages-zeta.vercel.app"
           target="_blank"
-          aria-label="Ir a la página Learn Languages Online">
-          <LinkIcon /></a
+          aria-label="Ir a la página Learn Languages Online"
+        >
+          <LinkIcon /><span>Link</span></a
         >
         <a
           href="https://github.com/fatso1000/learn-languages"
           target="_blank"
           aria-label="Ir al repositorio de github de la página Learn Languages Online"
-          ><GitHubSvg />
+          ><GitHubSvg /><span>Repositorio</span>
         </a>
       </div>
-    </ProjectCard>
-    <ProjectCard
+    </Project>
+    <Project
       title="Calculadora"
       description={[
         "Una calculadora que permite resolver todo tipo de cuentas básicas.",
         "Este fue un buen proyecto para empezar, me hizo mejorar mi lógica y aprendí cómo manejar estados.",
-      ]}>
-      <div class="technologies" slot="technologies">
-        <TypeScript />
-        <React />
-      </div>
+      ]}
+      projectTechs={[TypeScript, React]}
+    >
       <Image
         src={Calculator}
         alt="Demostración del proyecto Calculadora"
@@ -74,17 +69,19 @@ import ProjectCard from "./ui/ProjectCard.astro";
         <a
           href="https://calculadora-galarza-matias.netlify.app"
           target="_blank"
-          aria-label="Ir a la página Calculadora">
-          <LinkIcon /></a
+          aria-label="Ir a la página Calculadora"
         >
+          <LinkIcon />
+          <span>Link</span>
+        </a>
         <a
           href="https://github.com/Matrox1821/calculator"
           target="_blank"
           aria-label="Ir al repositorio de github de la página Calculadora"
-          ><GitHubSvg />
+          ><GitHubSvg /><span>Repositorio</span>
         </a>
       </div>
-    </ProjectCard>
+    </Project>
   </article>
 </section>
 
@@ -94,7 +91,7 @@ import ProjectCard from "./ui/ProjectCard.astro";
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    article {
+    > article {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -130,20 +127,7 @@ import ProjectCard from "./ui/ProjectCard.astro";
       animation: 3s glare linear infinite;
     }
   }
-  .technologies {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.5rem;
-    background-color: rgba(2, 6, 23, 0.5);
-    border-radius: 0.5rem;
-    border: 1px solid rgb(2 6 23);
-    margin: 0.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    backdrop-filter: blur(3px);
-  }
+
   .demostration {
     aspect-ratio: 16/9;
     width: 100%;
@@ -154,14 +138,39 @@ import ProjectCard from "./ui/ProjectCard.astro";
   .links {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-items: center !important;
+    gap: 1rem;
+    & > a {
+      width: 100%;
+      border: 2px solid #9999ff;
+      border-radius: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      gap: 0.5rem;
+      transition: 200ms ease-in-out background-color;
+      & > span {
+        color: #9999ff;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+    }
   }
   @media (width>768px) {
     #projects article {
       display: grid;
       gap: 1.5rem;
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (hover: hover) {
+    .links {
+      > a:hover {
+        background-color: rgba(153, 153, 255, 0.1);
+      }
     }
   }
 </style>

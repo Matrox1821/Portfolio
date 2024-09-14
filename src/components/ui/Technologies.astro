@@ -6,13 +6,13 @@ interface Props {
   }[];
 }
 
-const {technologies} = Astro.props;
+const { technologies } = Astro.props;
 ---
 
 <section class="container bottom">
   <ul>
     {
-      technologies.map(({label, Element}: any) => (
+      technologies.map(({ label, Element }: any) => (
         <li class="technology">
           <div class="inner">
             <Element />
