@@ -3,6 +3,12 @@ import GitHubName from "./social-network-names/GitHubName.astro";
 import SocialArrow from "../astro-svg/SocialArrow.astro";
 import CircleDrawed from "../astro-svg/CircleDrawed.astro";
 import GitHubBorderedSvg from "./social-networks/GitHubBorderedSvg.astro";
+
+interface Props {
+  animated?: boolean;
+}
+
+const { animated } = Astro.props;
 ---
 
 <div class="icon">
@@ -12,6 +18,7 @@ import GitHubBorderedSvg from "./social-networks/GitHubBorderedSvg.astro";
     class="link"
     aria-label="Perfil de Github">
     <GitHubBorderedSvg />
+    {!animated&&(<GitHubName />)}
   </a>
-  <CircleDrawed /><SocialArrow /><GitHubName />
+  {animated&&(<CircleDrawed /><SocialArrow /><GitHubName />)}
 </div>

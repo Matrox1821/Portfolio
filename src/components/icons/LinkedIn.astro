@@ -3,6 +3,11 @@ import LinkedInName from "./social-network-names/LinkedInName.astro";
 import SocialArrow from "../astro-svg/SocialArrow.astro";
 import CircleDrawed from "../astro-svg/CircleDrawed.astro";
 import LinkedInSvg from "./social-networks/LinkedInSvg.astro";
+interface Props {
+  animated?: boolean;
+}
+
+const { animated } = Astro.props;
 ---
 
 <div class="icon">
@@ -12,6 +17,7 @@ import LinkedInSvg from "./social-networks/LinkedInSvg.astro";
     class="link"
     aria-label="Perfil de LinkedIn">
     <LinkedInSvg />
+    {!animated&&(<LinkedInName />)}
   </a>
-  <CircleDrawed /><SocialArrow /><LinkedInName />
+  {animated&&(<CircleDrawed /><SocialArrow /><LinkedInName />)}
 </div>

@@ -11,6 +11,9 @@ import MongoDb from "./../components/icons/technologies/MongoDb.astro";
 import PostgreSql from "./../components/icons/technologies/PostgreSql.astro";
 import TailwindCss from "./../components/icons/technologies/TailwindCss.astro";
 
+import Calculator from "./../assets/calculator.webp";
+import LearnLanguagesOnline from "./../assets/learn-languages-online.webp";
+
 export const TECH_LIST = [
   { label: "React", Element: React },
   { label: "Next.js", Element: NextJs },
@@ -30,4 +33,39 @@ export const SECTIONS = [
   { href: "#home", label: "Inicio" },
   { href: "#about-me", label: "Sobre mí" },
   { href: "#projects", label: "Proyectos" },
+];
+
+export const PROJECTS = [
+  {
+    title: "Learn Languages Online",
+    description: [
+      "Una página para aprender distintos idiomas de una manera fácil y divertida.",
+      "En este proyecto aprendí a manejar bases de datos y a trabajar en equipo, hizo que mejore mi lógica en Back-End y el uso de los datos dinámicos.",
+    ],
+    projectTechs: [TypeScript, NextJs, PostgreSql, TailwindCss],
+    image: {
+      src: LearnLanguagesOnline,
+      alt: "",
+    },
+    links: {
+      pageLink: "https://learn-languages-zeta.vercel.app",
+      githubLink: "https://github.com/fatso1000/learn-languages",
+    },
+  },
+  {
+    title: "Calculadora",
+    description: [
+      "Una calculadora que permite resolver todo tipo de cuentas básicas.",
+      "Este fue un buen proyecto para empezar, me hizo mejorar mi lógica y aprendí cómo manejar estados.",
+    ],
+    projectTechs: [TypeScript, React],
+    image: {
+      src: Calculator,
+      alt: "Demostración del proyecto Calculadora",
+    },
+    links: {
+      pageLink: "https://calculadora-galarza-matias.netlify.app",
+      githubLink: "https://github.com/Matrox1821/calculator",
+    },
+  },
 ];

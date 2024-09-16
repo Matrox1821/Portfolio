@@ -1,13 +1,24 @@
 ---
+import { Image, imageConfig } from "astro:assets";
 import ProjectTechnologies from "./ProjectTechnologies.astro";
+import LinkIcon from "../icons/social-networks/LinkIcon.astro";
+import GitHubSvg from "../icons/social-networks/GitHubSvg.astro";
 
 interface Props {
   title: string;
   description: string[];
   projectTechs: any[];
+  image:{
+    src:ImageMetadata,
+    alt:string
+  }
+  links:{
+      pageLink: string,
+      githubLink: string
+  }
 }
 
-const { description, title, projectTechs } = Astro.props;
+const { description, title, projectTechs, image, links } = Astro.props;
 ---
 
 <section class="project">
@@ -16,13 +27,32 @@ const { description, title, projectTechs } = Astro.props;
     <div class="project-container">
       <div class="image-container">
         <ProjectTechnologies projectTechs={projectTechs} />
-        <slot name="demostration" />
+        <Image src={image.src}
+        alt={image.alt}
+        class="demostration"
+        decoding="async"
+        loading="lazy"/>
       </div>
       <div class="description">
         {description.map((text: string) => <p>{text}</p>)}
       </div>
     </div>
-    <slot name="links" />
+    <div class="links">
+      <a
+          href={links.pageLink}
+          target="_blank"
+          aria-label="Ir a la página Learn Languages Online"
+        >
+          <LinkIcon /><span>Link</span>
+        </a>
+        <a
+          href={links.githubLink}
+          target="_blank"
+          aria-label="Ir al repositorio de github de la página Learn Languages Online"
+          >
+          <GitHubSvg /><span>Repositorio</span>
+        </a>
+    </div>
   </article>
 </section>
 
@@ -41,13 +71,19 @@ const { description, title, projectTechs } = Astro.props;
       flex-direction: column;
       gap: 1rem;
       justify-content: space-between;
+      
       > .project-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         > .image-container {
           display: flex;
           flex-direction: column-reverse;
           align-items: end;
           position: relative;
           gap: 0.5rem;
+          >img{
+          height: 15rem;}
         }
 
         .description {
@@ -55,6 +91,7 @@ const { description, title, projectTechs } = Astro.props;
           display: flex;
           flex-direction: column;
           gap: 1rem;
+          height: 4rem;
           p {
             margin: 0;
           }
@@ -97,6 +134,44 @@ const { description, title, projectTechs } = Astro.props;
       left: -6rem;
       opacity: 0.4;
       animation: 3s glare linear infinite;
+    }
+  }
+  .demostration {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+  .links {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center !important;
+    gap: 1rem;
+    & > a {
+      width: 100%;
+      border: 2px solid #9999ff;
+      border-radius: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      gap: 0.5rem;
+      transition: 200ms ease-in-out background-color;
+      & > span {
+        color: #9999ff;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+    }
+  }
+  @media (hover: hover) {
+    .links {
+      > a:hover {
+        background-color: rgba(153, 153, 255, 0.1);
+      }
     }
   }
 </style>

@@ -4,6 +4,12 @@ import CVName from "./social-network-names/CVName.astro";
 import CircleDrawed from "../astro-svg/CircleDrawed.astro";
 import SocialArrow from "../astro-svg/SocialArrow.astro";
 import CVSvg from "./social-networks/CVSvg.astro";
+
+interface Props {
+  animated?: boolean;
+}
+
+const { animated } = Astro.props;
 ---
 
 <div class="icon">
@@ -13,6 +19,7 @@ import CVSvg from "./social-networks/CVSvg.astro";
     class="link"
     aria-label="Descargar el Currículum Vitae de Galarza Matías">
     <CVSvg />
+    {!animated&&(<CVName />)}
   </a>
-  <CircleDrawed /><SocialArrow /><CVName />
+  {animated&&(<CircleDrawed /><SocialArrow /><CVName />)}
 </div>

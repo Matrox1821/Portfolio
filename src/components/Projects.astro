@@ -1,15 +1,6 @@
 ---
-import { Image } from "astro:assets";
-import Calculator from "./../assets/calculator.webp";
-import LearnLanguagesOnline from "./../assets/learn-languages-online.webp";
-import TypeScript from "./icons/technologies/TypeScript.astro";
-import NextJs from "./icons/technologies/NextJs.astro";
-import TailwindCss from "./icons/technologies/TailwindCss.astro";
-import PostgreSql from "./icons/technologies/PostgreSql.astro";
-import LinkIcon from "./icons/social-networks/LinkIcon.astro";
-import GitHubSvg from "./icons/social-networks/GitHubSvg.astro";
-import React from "./icons/technologies/React.astro";
 import Project from "./ui/Project.astro";
+import { PROJECTS } from "../shared/helpers";
 ---
 
 <section id="projects">
@@ -17,71 +8,15 @@ import Project from "./ui/Project.astro";
     <h2>Proyectos</h2>
   </header>
   <article>
-    <Project
-      title="Learn Languages Online"
-      description={[
-        "Una página para aprender distintos idiomas de una manera fácil y divertida.",
-        "En este proyecto aprendí a manejar bases de datos y a trabajar en equipo, hizo que mejore mi lógica en Back-End y el uso de los datos dinámicos.",
-      ]}
-      projectTechs={[TypeScript, NextJs, PostgreSql, TailwindCss]}
-    >
-      <Image
-        src={LearnLanguagesOnline}
-        alt="Demostración del proyecto Learn Languages Online"
-        class="demostration"
-        decoding="async"
-        loading="lazy"
-        slot="demostration"
-      />
-      <div class="links" slot="links">
-        <a
-          href="https://learn-languages-zeta.vercel.app"
-          target="_blank"
-          aria-label="Ir a la página Learn Languages Online"
-        >
-          <LinkIcon /><span>Link</span></a
-        >
-        <a
-          href="https://github.com/fatso1000/learn-languages"
-          target="_blank"
-          aria-label="Ir al repositorio de github de la página Learn Languages Online"
-          ><GitHubSvg /><span>Repositorio</span>
-        </a>
-      </div>
-    </Project>
-    <Project
-      title="Calculadora"
-      description={[
-        "Una calculadora que permite resolver todo tipo de cuentas básicas.",
-        "Este fue un buen proyecto para empezar, me hizo mejorar mi lógica y aprendí cómo manejar estados.",
-      ]}
-      projectTechs={[TypeScript, React]}
-    >
-      <Image
-        src={Calculator}
-        alt="Demostración del proyecto Calculadora"
-        class="demostration"
-        decoding="async"
-        loading="lazy"
-        slot="demostration"
-      />
-      <div class="links" slot="links">
-        <a
-          href="https://calculadora-galarza-matias.netlify.app"
-          target="_blank"
-          aria-label="Ir a la página Calculadora"
-        >
-          <LinkIcon />
-          <span>Link</span>
-        </a>
-        <a
-          href="https://github.com/Matrox1821/calculator"
-          target="_blank"
-          aria-label="Ir al repositorio de github de la página Calculadora"
-          ><GitHubSvg /><span>Repositorio</span>
-        </a>
-      </div>
-    </Project>
+    {PROJECTS.map((project)=>(
+      <Project
+      title={project.title}
+      description={project.description}
+      projectTechs={project.projectTechs}
+      image={project.image} 
+      links={project.links}
+    />
+    ))}
   </article>
 </section>
 
@@ -128,37 +63,7 @@ import Project from "./ui/Project.astro";
     }
   }
 
-  .demostration {
-    aspect-ratio: 16/9;
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    object-fit: cover;
-  }
-  .links {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-items: center !important;
-    gap: 1rem;
-    & > a {
-      width: 100%;
-      border: 2px solid #9999ff;
-      border-radius: 0.75rem;
-      padding: 0.25rem 0.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      gap: 0.5rem;
-      transition: 200ms ease-in-out background-color;
-      & > span {
-        color: #9999ff;
-        font-size: 1.25rem;
-        font-weight: 600;
-      }
-    }
-  }
+  
   @media (width>768px) {
     #projects article {
       display: grid;
@@ -166,13 +71,7 @@ import Project from "./ui/Project.astro";
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  @media (hover: hover) {
-    .links {
-      > a:hover {
-        background-color: rgba(153, 153, 255, 0.1);
-      }
-    }
-  }
+  
 </style>
 
 <style is:global>

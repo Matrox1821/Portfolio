@@ -12,8 +12,8 @@ import CV from "./icons/CV.astro";
     src={Matias}
     alt="Foto de Matias Galarza"
     class="matias-image"
-    decoding="async"
-    loading="lazy"
+    decoding="sync"
+    loading="eager"
   />
   <article>
     <h1>
@@ -22,9 +22,9 @@ import CV from "./icons/CV.astro";
     </h1>
     <WebDeveloper />
     <section class="socials">
-      <GitHub />
-      <LinkedIn />
-      <CV />
+      <GitHub animated/>
+      <LinkedIn animated/>
+      <CV animated/>
     </section>
   </article>
 </section>
