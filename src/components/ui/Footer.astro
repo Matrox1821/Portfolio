@@ -1,20 +1,14 @@
 ---
-import GalarzaMatiasCV from "../../assets/resume/GalarzaMatiasCV.pdf"
-import CV from "../icons/CV.astro"
-import GitHub from "../icons/GitHub.astro"
-import LinkedIn from "../icons/LinkedIn.astro"
-import EMail from "../icons/EMail.astro"
-import LinkedInName from "../icons/social-network-names/LinkedInName.astro"
-import GitHubName from "../icons/social-network-names/GitHubName.astro"
-import CVName from "../icons/social-network-names/CVName.astro"
-
+import CV from "../icons/CV.astro";
+import GitHub from "../icons/GitHub.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
 ---
 
 <footer>
   <div class="contact">
     <LinkedIn />
-    <GitHub/>
-    <CV/>
+    <GitHub />
+    <CV />
   </div>
 </footer>
 <style>
@@ -36,44 +30,44 @@ import CVName from "../icons/social-network-names/CVName.astro"
       justify-content: space-evenly;
       align-items: center;
       justify-items: center;
-      
-      >.icon>.link{
+
+      > .icon > .link {
         display: flex;
         gap: 1rem;
         flex-direction: column;
         height: 4rem;
         align-items: center;
-        .logo{
+        .logo {
           height: 3rem !important;
           width: 3rem !important;
         }
-        .logo-name{
-          position: relative; 
+        .logo-name {
+          position: relative;
           opacity: 1;
-          transform: none; 
-
+          transform: none;
         }
       }
     }
   }
-  @media (width>480px){
-    footer{
-      .contact{>.icon>.link{
-        display: flex;
-        gap: 1rem;
-        flex-direction: row;
-        width: 8rem;
-        .logo{
-          height: 3rem !important;
-          width: 3rem !important;
-        }
-        .logo-name{
-          position: relative; 
-          opacity: 1;
-          transform: none; 
-
+  @media (width>480px) {
+    footer {
+      .contact {
+        > .icon > .link {
+          display: flex;
+          gap: 1rem;
+          flex-direction: row;
+          width: 8rem;
+          .logo {
+            height: 3rem !important;
+            width: 3rem !important;
+          }
+          .logo-name {
+            position: relative;
+            opacity: 1;
+            transform: none;
+          }
         }
       }
-    }}
+    }
   }
 </style>
