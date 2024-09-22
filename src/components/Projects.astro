@@ -1,22 +1,26 @@
 ---
 import Project from "./ui/Project.astro";
 import { PROJECTS } from "../shared/helpers";
+import Clover from "./astro-svg/Clover.astro";
 ---
 
 <section id="projects">
   <header>
+    <Clover />
     <h2>Proyectos</h2>
   </header>
   <article>
-    {PROJECTS.map((project)=>(
-      <Project
-      title={project.title}
-      description={project.description}
-      projectTechs={project.projectTechs}
-      image={project.image} 
-      links={project.links}
-    />
-    ))}
+    {
+      PROJECTS.map((project) => (
+        <Project
+          title={project.title}
+          description={project.description}
+          projectTechs={project.projectTechs}
+          image={project.image}
+          links={project.links}
+        />
+      ))
+    }
   </article>
 </section>
 
@@ -32,8 +36,7 @@ import { PROJECTS } from "../shared/helpers";
       gap: 1.5rem;
     }
   }
-  h2 {
-    text-transform:;
+  header {
     padding: 1rem;
     overflow: hidden;
     width: 100%;
@@ -43,6 +46,9 @@ import { PROJECTS } from "../shared/helpers";
     position: relative;
     box-sizing: border-box;
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     &::after {
       content: "";
       width: 3rem;
@@ -61,9 +67,12 @@ import { PROJECTS } from "../shared/helpers";
       opacity: 0.4;
       animation: 3s glare linear infinite;
     }
+    h2 {
+      margin: 0;
+      text-transform: uppercase;
+    }
   }
 
-  
   @media (width>768px) {
     #projects article {
       display: grid;
@@ -71,7 +80,6 @@ import { PROJECTS } from "../shared/helpers";
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  
 </style>
 
 <style is:global>
