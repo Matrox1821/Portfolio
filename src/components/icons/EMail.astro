@@ -1,0 +1,25 @@
+---
+import GalarzaMatiasCV from "./../../assets/resume/GalarzaMatiasCV.pdf";
+import CVName from "./social-network-names/CVName.astro";
+import CircleDrawed from "../astro-svg/CircleDrawed.astro";
+import SocialArrow from "../astro-svg/SocialArrow.astro";
+import EMailSvg from "./social-networks/EMailSvg.astro";
+
+interface Props {
+  animated?: boolean;
+}
+const { animated } = Astro.props;
+console.log(animated)
+---
+
+<div class="icon">
+  <a
+    href={GalarzaMatiasCV}
+    download="Galarza Matías CV"
+    class="link"
+    aria-label="Descargar el Currículum Vitae de Galarza Matías">
+    <EMailSvg />
+  </a>
+
+  {animated?(<CircleDrawed /><SocialArrow /><CVName />):<CVName/>}
+</div>
