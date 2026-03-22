@@ -12,11 +12,10 @@ import { TECH_LIST } from "./../shared/helpers.ts";
     </header>
     <section class="container">
       <p>
-        ¡Hola! Me llamo <span>Matías</span>. Actualmente estudio un la <span
-          >UNAJ</span
-        > y me especializo en diseñar <span>páginas web</span> con estilos <span
-          >atractivos</span
-        > y código <span>eficiente</span>.
+        ¡Hola! Me llamo <span>Matías</span>. Actualmente estudio un la <span>UNAJ</span> y me especializo
+        en diseñar <span>páginas web</span> con estilos <span>atractivos</span> y código <span
+          >eficiente</span
+        >.
       </p>
     </section>
   </article>
@@ -44,7 +43,8 @@ import { TECH_LIST } from "./../shared/helpers.ts";
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      background-image: repeating-linear-gradient(
+      background-image:
+        repeating-linear-gradient(
           -45deg,
           #9999ff1f,
           #9999ff1f 1px,
@@ -195,12 +195,7 @@ import { TECH_LIST } from "./../shared/helpers.ts";
       &:hover::before {
         content: "";
         display: block;
-        background: linear-gradient(
-          90deg,
-          transparent 0%,
-          #9999ff 50%,
-          transparent 100%
-        );
+        background: linear-gradient(90deg, transparent 0%, #9999ff 50%, transparent 100%);
         width: 3rem;
         height: 7rem;
         transform: translate(0);
@@ -213,7 +208,7 @@ import { TECH_LIST } from "./../shared/helpers.ts";
     }
   }
   @keyframes glare {
-    0 {
+    0% {
       left: -150px;
     }
     40%,

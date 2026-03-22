@@ -68,20 +68,4 @@ export const PROJECTS = [
       githubLink: "https://github.com/Matrox1821/calculator",
     },
   },
-  {
-    title: "Calculadora",
-    description: [
-      "Una calculadora que permite resolver todo tipo de cuentas básicas.",
-      "Este fue un buen proyecto para empezar, me hizo mejorar mi lógica y aprendí cómo manejar estados.",
-    ],
-    projectTechs: [TypeScript, React],
-    image: {
-      src: Calculator,
-      alt: "Demostración del proyecto Calculadora",
-    },
-    links: {
-      pageLink: "https://calculadora-galarza-matias.netlify.app",
-      githubLink: "https://github.com/Matrox1821/calculator",
-    },
-  },
 ];
